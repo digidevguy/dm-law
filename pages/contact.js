@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 	pageContent: {
 		margin: theme.spacing(3),
 		padding: theme.spacing(1),
-		backgroundColor: '#ffffff',
+		backgroundColor: '#ccf2f4',
 		textAlign: 'center',
 		maxWidth: '900px',
 		width: '90%',

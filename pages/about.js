@@ -1,6 +1,7 @@
 import {
 	Box,
 	Container,
+	Divider,
 	Grid,
 	makeStyles,
 	Typography,
@@ -13,7 +14,6 @@ import CallToAction from '../components/shared/call-to-action';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
-		flexGrow: 1,
 		textAlign: 'center',
 	},
 	container: {
@@ -28,8 +28,14 @@ const useStyles = makeStyles((theme) => ({
 	lawyerDescription: {
 		textAlign: 'left',
 	},
+	descriptionText: {
+		margin: theme.spacing(2),
+	},
 	lawyerImg: {
-		verticalAlign: 'middle',
+		[theme.breakpoints.down('sm')]: { marginTop: theme.spacing(1) },
+	},
+	altLawyerDiv: {
+		[theme.breakpoints.down('sm')]: { flexDirection: 'column-reverse' },
 	},
 }));
 
@@ -50,9 +56,9 @@ export default function AboutPage() {
 					About Page
 				</Typography>
 			</Box>
-			<Container component='section' id='lawyer-one'>
-				<Grid container align='center' justify='center'>
-					<Grid item sm={6}>
+			<Box component='section' id='lawyer-one'>
+				<Grid container alignItems='center' justify='center' spacing='2'>
+					<Grid className={classes.lawyerImg} item sm={6}>
 						<Image
 							src='/images/hunters-race-MYbhN8KaaEc-unsplash.jpg'
 							alt='Lawyer 1'
@@ -62,42 +68,107 @@ export default function AboutPage() {
 					</Grid>
 					<Grid item sm={6}>
 						<Typography variant='h3'>Lawyer One</Typography>
-						<Typography className={classes.lawyerDescription} variant='body1'>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-							eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus
-							vestibulum mattis ullamcorper velit sed ullamcorper morbi. Dolor
-							sit amet consectetur adipiscing elit pellentesque habitant. Elit
-							ut aliquam purus sit amet luctus venenatis. In hendrerit gravida
-							rutrum quisque non tellus orci. Sed augue lacus viverra vitae
-							congue eu consequat ac felis. Neque sodales ut etiam sit. Ornare
-							suspendisse sed nisi lacus sed viverra tellus. Ut eu sem integer
-							vitae justo eget. Lacinia at quis risus sed vulputate. Id volutpat
-							lacus laoreet non curabitur gravida arcu ac tortor. Parturient
-							montes nascetur ridiculus mus mauris. Sit amet consectetur
-							adipiscing elit pellentesque. Senectus et netus et malesuada
-							fames. Ante in nibh mauris cursus mattis molestie. Tortor
-							dignissim convallis aenean et tortor at risus viverra. Nunc congue
-							nisi vitae suscipit tellus mauris. Erat nam at lectus urna duis
-							convallis convallis tellus id. Enim lobortis scelerisque fermentum
-							dui faucibus in ornare quam viverra.
-						</Typography>
-						<Typography className={classes.lawyerDescription} variant='body1'>
-							Scelerisque eleifend donec pretium vulputate sapien nec sagittis
-							aliquam. Nec dui nunc mattis enim ut tellus elementum. Hac
-							habitasse platea dictumst quisque sagittis. Nunc scelerisque
-							viverra mauris in aliquam sem fringilla ut. Leo a diam
-							sollicitudin tempor. Eros donec ac odio tempor orci dapibus. Nibh
-							praesent tristique magna sit amet. Urna neque viverra justo nec
-							ultrices dui sapien eget mi. Non consectetur a erat nam at lectus
-							urna. Id aliquet lectus proin nibh nisl condimentum. Tincidunt
-							arcu non sodales neque sodales ut etiam sit amet. Sed vulputate mi
-							sit amet mauris commodo quis. Fermentum posuere urna nec tincidunt
-							praesent semper feugiat nibh. Nec dui nunc mattis enim ut tellus.
-							Malesuada bibendum arcu vitae elementum curabitur vitae nunc.
-						</Typography>
+						<Box className={classes.descriptionText}>
+							<Typography className={classes.lawyerDescription} variant='body1'>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+								eiusmod tempor incididunt ut labore et dolore magna aliqua.
+								Lectus vestibulum mattis ullamcorper velit sed ullamcorper
+								morbi. Dolor sit amet consectetur adipiscing elit pellentesque
+								habitant. Elit ut aliquam purus sit amet luctus venenatis. In
+								hendrerit gravida rutrum quisque non tellus orci. Sed augue
+								lacus viverra vitae congue eu consequat ac felis. Neque sodales
+								ut etiam sit. Ornare suspendisse sed nisi lacus sed viverra
+								tellus. Ut eu sem integer vitae justo eget. Lacinia at quis
+								risus sed vulputate. Id volutpat lacus laoreet non curabitur
+								gravida arcu ac tortor. Parturient montes nascetur ridiculus mus
+								mauris. Sit amet consectetur adipiscing elit pellentesque.
+								Senectus et netus et malesuada fames. Ante in nibh mauris cursus
+								mattis molestie. Tortor dignissim convallis aenean et tortor at
+								risus viverra. Nunc congue nisi vitae suscipit tellus mauris.
+								Erat nam at lectus urna duis convallis convallis tellus id. Enim
+								lobortis scelerisque fermentum dui faucibus in ornare quam
+								viverra.
+							</Typography>
+							<br />
+							<Typography className={classes.lawyerDescription} variant='body1'>
+								Scelerisque eleifend donec pretium vulputate sapien nec sagittis
+								aliquam. Nec dui nunc mattis enim ut tellus elementum. Hac
+								habitasse platea dictumst quisque sagittis. Nunc scelerisque
+								viverra mauris in aliquam sem fringilla ut. Leo a diam
+								sollicitudin tempor. Eros donec ac odio tempor orci dapibus.
+								Nibh praesent tristique magna sit amet. Urna neque viverra justo
+								nec ultrices dui sapien eget mi. Non consectetur a erat nam at
+								lectus urna. Id aliquet lectus proin nibh nisl condimentum.
+								Tincidunt arcu non sodales neque sodales ut etiam sit amet. Sed
+								vulputate mi sit amet mauris commodo quis. Fermentum posuere
+								urna nec tincidunt praesent semper feugiat nibh. Nec dui nunc
+								mattis enim ut tellus. Malesuada bibendum arcu vitae elementum
+								curabitur vitae nunc.
+							</Typography>
+						</Box>
 					</Grid>
 				</Grid>
-			</Container>
+			</Box>
+			<Divider variant='middle' />
+			<Box component='section' id='lawyer-two'>
+				<Grid
+					className={classes.altLawyerDiv}
+					container
+					alignItems='center'
+					justify='center'
+					spacing='2'
+				>
+					<Grid item sm={6}>
+						<Typography variant='h3'>Lawyer Two</Typography>
+						<Box className={classes.descriptionText}>
+							<Typography className={classes.lawyerDescription} variant='body1'>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+								eiusmod tempor incididunt ut labore et dolore magna aliqua.
+								Lectus vestibulum mattis ullamcorper velit sed ullamcorper
+								morbi. Dolor sit amet consectetur adipiscing elit pellentesque
+								habitant. Elit ut aliquam purus sit amet luctus venenatis. In
+								hendrerit gravida rutrum quisque non tellus orci. Sed augue
+								lacus viverra vitae congue eu consequat ac felis. Neque sodales
+								ut etiam sit. Ornare suspendisse sed nisi lacus sed viverra
+								tellus. Ut eu sem integer vitae justo eget. Lacinia at quis
+								risus sed vulputate. Id volutpat lacus laoreet non curabitur
+								gravida arcu ac tortor. Parturient montes nascetur ridiculus mus
+								mauris. Sit amet consectetur adipiscing elit pellentesque.
+								Senectus et netus et malesuada fames. Ante in nibh mauris cursus
+								mattis molestie. Tortor dignissim convallis aenean et tortor at
+								risus viverra. Nunc congue nisi vitae suscipit tellus mauris.
+								Erat nam at lectus urna duis convallis convallis tellus id. Enim
+								lobortis scelerisque fermentum dui faucibus in ornare quam
+								viverra.
+							</Typography>
+							<br />
+							<Typography className={classes.lawyerDescription} variant='body1'>
+								Scelerisque eleifend donec pretium vulputate sapien nec sagittis
+								aliquam. Nec dui nunc mattis enim ut tellus elementum. Hac
+								habitasse platea dictumst quisque sagittis. Nunc scelerisque
+								viverra mauris in aliquam sem fringilla ut. Leo a diam
+								sollicitudin tempor. Eros donec ac odio tempor orci dapibus.
+								Nibh praesent tristique magna sit amet. Urna neque viverra justo
+								nec ultrices dui sapien eget mi. Non consectetur a erat nam at
+								lectus urna. Id aliquet lectus proin nibh nisl condimentum.
+								Tincidunt arcu non sodales neque sodales ut etiam sit amet. Sed
+								vulputate mi sit amet mauris commodo quis. Fermentum posuere
+								urna nec tincidunt praesent semper feugiat nibh. Nec dui nunc
+								mattis enim ut tellus. Malesuada bibendum arcu vitae elementum
+								curabitur vitae nunc.
+							</Typography>
+						</Box>
+					</Grid>
+					<Grid className={classes.lawyerImg} item sm={6}>
+						<Image
+							src='/images/hunters-race-MYbhN8KaaEc-unsplash.jpg'
+							alt='Lawyer 2'
+							width={350}
+							height={215}
+						/>
+					</Grid>
+				</Grid>
+			</Box>
 			<CallToAction />
 			<Footer />
 		</Box>
