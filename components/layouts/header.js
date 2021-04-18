@@ -204,7 +204,10 @@ export default function Header() {
             />
           </Link>
           <nav className={classes.nav}>
-            <ButtonGroup variant="text" colot="primary">
+            <ButtonGroup variant="text" color="primary">
+              <Button variant="text" component={Link} noLinkStyle href="/">
+                Home
+              </Button>
               <Button variant="text" component={Link} noLinkStyle href="/about">
                 About
               </Button>

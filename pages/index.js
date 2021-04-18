@@ -1,13 +1,5 @@
 import Image from "next/image";
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  makeStyles,
-  Paper,
-  Typography,
-} from "@material-ui/core";
+import { Box, Grid, makeStyles, Typography } from "@material-ui/core";
 
 import Card from "../components/home/Card";
 import Footer from "../components/layouts/footer";
@@ -34,12 +26,6 @@ const useStyles = makeStyles((theme) => ({
     top: "50%",
     left: "15%",
     color: "#ffffff",
-  },
-  ctaImage: {
-    [theme.breakpoints.down("sm")]: { marginTop: theme.spacing(1) },
-  },
-  ctaPaper: {
-    padding: theme.spacing(2),
   },
 }));
 
