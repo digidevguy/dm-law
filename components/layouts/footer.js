@@ -3,7 +3,6 @@ import {
 	ButtonGroup,
 	ClickAwayListener,
 	Container,
-	Grid,
 	Grow,
 	makeStyles,
 	MenuItem,
@@ -12,10 +11,8 @@ import {
 	Popper,
 	Typography,
 } from '@material-ui/core';
-import { Autorenew } from '@material-ui/icons';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import TwitterIcon from '@material-ui/icons/Twitter';
 import { useRef, useState } from 'react';
 
 import Link from '../../src/Link';
