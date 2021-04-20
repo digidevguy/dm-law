@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import {
 	Button,
 	ButtonGroup,
@@ -38,6 +39,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function footer() {
 	const classes = useStyles();
+	const router = useRouter();
 	const [open, setOpen] = useState(false);
 	const anchorRef = useRef(null);
 
@@ -50,6 +52,12 @@ export default function footer() {
 			return;
 		}
 
+		setOpen(false);
+	};
+
+	const handleFooterClick = (e, route) => {
+		e.preventDefault();
+		router.push(route);
 		setOpen(false);
 	};
 
@@ -119,14 +127,44 @@ export default function footer() {
 										id='menu-list-grow'
 										onKeyDown={handleListKeyDown}
 									>
-										<MenuItem onClick={handleFooterClose}>
+										<MenuItem
+											onClick={(e) => {
+												handleFooterClick(
+													e,
+													'/practice-area/getting-started-with-nextjs'
+												);
+											}}
+										>
 											Estate Planning
 										</MenuItem>
-										<MenuItem onClick={handleFooterClose}>Family Law</MenuItem>
-										<MenuItem onClick={handleFooterClose}>
+										<MenuItem
+											onClick={(e) => {
+												handleFooterClick(
+													e,
+													'/practice-area/mastering-javascript'
+												);
+											}}
+										>
+											Family Law
+										</MenuItem>
+										<MenuItem
+											onClick={(e) => {
+												handleFooterClick(
+													e,
+													'/practice-area/getting-started-with-nextjs'
+												);
+											}}
+										>
 											Business Law
 										</MenuItem>
-										<MenuItem onClick={handleFooterClose}>
+										<MenuItem
+											onClick={(e) => {
+												handleFooterClick(
+													e,
+													'/practice-area/mastering-javascript'
+												);
+											}}
+										>
 											Intellectual Property
 										</MenuItem>
 									</MenuList>

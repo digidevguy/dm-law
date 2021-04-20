@@ -80,6 +80,12 @@ export default function Header() {
 		setNestedOpen(!nestedOpen);
 	};
 
+	const handleNavClick = (e, route) => {
+		e.preventDefault();
+		router.push(route);
+		setMenuOpen(false);
+	};
+
 	const handleNavToggle = () => {
 		setMenuOpen((prevOpen) => !prevOpen);
 	};
@@ -164,7 +170,7 @@ export default function Header() {
 							<ListItem
 								button
 								onClick={(e) => {
-									handleClick(e, '/');
+									handleClick(e, '/practice-area/getting-started-with-nextjs');
 								}}
 							>
 								<ListItemText primary='Estate Planning' />
@@ -173,7 +179,7 @@ export default function Header() {
 							<ListItem
 								button
 								onClick={(e) => {
-									handleClick(e, '/');
+									handleClick(e, '/practice-area/mastering-javascript');
 								}}
 							>
 								<ListItemText primary='Family Law' />
@@ -182,7 +188,7 @@ export default function Header() {
 							<ListItem
 								button
 								onClick={(e) => {
-									handleClick(e, '/');
+									handleClick(e, '/practice-area/getting-started-with-nextjs');
 								}}
 							>
 								<ListItemText primary='Business Practice' />
@@ -191,7 +197,7 @@ export default function Header() {
 							<ListItem
 								button
 								onClick={(e) => {
-									handleClick(e, '/');
+									handleClick(e, '/practice-area/mastering-javascript');
 								}}
 							>
 								<ListItemText primary='Intellectual Properly' />
@@ -271,14 +277,44 @@ export default function Header() {
 												id='menu-list-grow'
 												onKeyDown={handleListKeyDown}
 											>
-												<MenuItem onClick={handleNavClose}>
+												<MenuItem
+													onClick={(e) => {
+														handleNavClick(
+															e,
+															'/practice-area/getting-started-with-nextjs'
+														);
+													}}
+												>
 													Estate Planning
 												</MenuItem>
-												<MenuItem onClick={handleNavClose}>Family Law</MenuItem>
-												<MenuItem onClick={handleNavClose}>
+												<MenuItem
+													onClick={(e) => {
+														handleNavClick(
+															e,
+															'/practice-area/mastering-javascript'
+														);
+													}}
+												>
+													Family Law
+												</MenuItem>
+												<MenuItem
+													onClick={(e) => {
+														handleNavClick(
+															e,
+															'/practice-area/getting-started-with-nextjs'
+														);
+													}}
+												>
 													Business Law
 												</MenuItem>
-												<MenuItem onClick={handleNavClose}>
+												<MenuItem
+													onClick={(e) => {
+														handleNavClick(
+															e,
+															'/practice-area/mastering-javascript'
+														);
+													}}
+												>
 													Intellectual Property
 												</MenuItem>
 											</MenuList>
