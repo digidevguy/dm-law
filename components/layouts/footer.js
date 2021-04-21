@@ -100,7 +100,12 @@ export default function footer() {
 					<Button variant='text' component={Link} noLinkStyle href='/contact'>
 						Contact
 					</Button>
-					<Button variant='text' component={Link} noLinkStyle href='/'>
+					<Button
+						variant='text'
+						component={Link}
+						noLinkStyle
+						href='https://app.clio.com/client_connect/'
+					>
 						Client Portal
 					</Button>
 				</ButtonGroup>

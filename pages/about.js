@@ -15,6 +15,7 @@ import CallToAction from '../components/shared/call-to-action';
 const useStyles = makeStyles((theme) => ({
 	root: {
 		textAlign: 'center',
+		backgroundColor: '#edeef7',
 	},
 	container: {
 		position: 'relative',
@@ -60,14 +61,15 @@ export default function AboutPage() {
 				<Grid container alignItems='center' justify='center' spacing='2'>
 					<Grid className={classes.lawyerImg} item sm={6}>
 						<Image
-							src='/images/hunters-race-MYbhN8KaaEc-unsplash.jpg'
-							alt='Lawyer 1'
-							width={350}
-							height={215}
+							src='/images/about/cd-profile.jpeg'
+							alt='Conner Dyer Profile Photo'
+							width={250}
+							height={350}
+							layout='intrinsic'
 						/>
 					</Grid>
 					<Grid item sm={6}>
-						<Typography variant='h3'>Lawyer One</Typography>
+						<Typography variant='h3'>Conner Dyer</Typography>
 						<Box className={classes.descriptionText}>
 							<Typography className={classes.lawyerDescription} variant='body1'>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -119,7 +121,7 @@ export default function AboutPage() {
 					spacing='2'
 				>
 					<Grid item sm={6}>
-						<Typography variant='h3'>Lawyer Two</Typography>
+						<Typography variant='h3'>Eric Mauro</Typography>
 						<Box className={classes.descriptionText}>
 							<Typography className={classes.lawyerDescription} variant='body1'>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -161,10 +163,11 @@ export default function AboutPage() {
 					</Grid>
 					<Grid className={classes.lawyerImg} item sm={6}>
 						<Image
-							src='/images/hunters-race-MYbhN8KaaEc-unsplash.jpg'
-							alt='Lawyer 2'
-							width={350}
-							height={215}
+							src='/images/about/em-profile.jpeg'
+							alt='Eric Mauro Profile Photo'
+							width={250}
+							height={350}
+							layout='intrinsic'
 						/>
 					</Grid>
 				</Grid>

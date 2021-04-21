@@ -152,7 +152,7 @@ export default function Header() {
 					<ListItem
 						button
 						onClick={(e) => {
-							handleClick(e, '/');
+							handleClick(e, 'https://app.clio.com/client_connect/');
 						}}
 					>
 						<ListItemText primary='Client Portal' />
@@ -251,7 +251,12 @@ export default function Header() {
 							>
 								Contact
 							</Button>
-							<Button variant='text' component={Link} noLinkStyle href='/'>
+							<Button
+								variant='text'
+								component={Link}
+								noLinkStyle
+								href='https://app.clio.com/client_connect/'
+							>
 								Client Portal
 							</Button>
 						</ButtonGroup>
