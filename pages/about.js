@@ -14,6 +14,9 @@ import CallToAction from '../components/shared/call-to-action';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
+		'& h3': {
+			fontWeight: '700',
+		},
 		textAlign: 'center',
 		backgroundColor: '#edeef7',
 	},
@@ -30,10 +33,10 @@ const useStyles = makeStyles((theme) => ({
 		textAlign: 'left',
 	},
 	descriptionText: {
-		margin: theme.spacing(2),
+		margin: theme.spacing(3),
 	},
 	lawyerImg: {
-		[theme.breakpoints.down('sm')]: { marginTop: theme.spacing(1) },
+		[theme.breakpoints.down('sm')]: { marginTop: theme.spacing(2) },
 	},
 	altLawyerDiv: {
 		[theme.breakpoints.down('sm')]: { flexDirection: 'column-reverse' },
@@ -63,8 +66,8 @@ export default function AboutPage() {
 						<Image
 							src='/images/about/cd-profile.jpeg'
 							alt='Conner Dyer Profile Photo'
-							width={250}
-							height={350}
+							width={175}
+							height={225}
 							layout='intrinsic'
 						/>
 					</Grid>
@@ -165,8 +168,8 @@ export default function AboutPage() {
 						<Image
 							src='/images/about/em-profile.jpeg'
 							alt='Eric Mauro Profile Photo'
-							width={250}
-							height={350}
+							width={175}
+							height={225}
 							layout='intrinsic'
 						/>
 					</Grid>

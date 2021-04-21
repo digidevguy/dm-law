@@ -36,10 +36,10 @@ const CallToAction = () => {
 					<Typography variant='h2'>Need Help?</Typography>
 					<Divider variant='middle' />
 					<Typography>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-						eiusmod tempor incididunt ut labore et dolore magna aliqua. In metus
-						vulputate eu scelerisque felis imperdiet proin fermentum leo. Ac
-						turpis egestas integer eget.
+						We are a full-service law firm and can assist with legal issues
+						including wills, trusts, probate, family matters, business
+						formation, trademarks and guardianship matters. Contact us today to
+						find out how we can be of assistance.
 					</Typography>
 				</Grid>
 				<Grid className={classes.rightBox} item xs={12} sm={6}>
@@ -48,8 +48,8 @@ const CallToAction = () => {
 							<Image
 								src='/images/toa-heftiba-_UIVmIBB3JU-unsplash.jpg'
 								alt='help image'
-								width={200}
-								height={300}
+								width={325}
+								height={200}
 								layout='intrinsic'
 							/>
 						</div>

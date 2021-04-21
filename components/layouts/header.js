@@ -139,24 +139,7 @@ export default function Header() {
 					>
 						<ListItemText primary='About' />
 					</ListItem>
-					<Divider variant='middle' />
-					<ListItem
-						button
-						onClick={(e) => {
-							handleClick(e, '/contact');
-						}}
-					>
-						<ListItemText primary='Contact Us' />
-					</ListItem>
-					<Divider variant='middle' />
-					<ListItem
-						button
-						onClick={(e) => {
-							handleClick(e, 'https://app.clio.com/client_connect/');
-						}}
-					>
-						<ListItemText primary='Client Portal' />
-					</ListItem>
+
 					<Divider variant='middle' />
 
 					{/* potential */}
@@ -205,6 +188,24 @@ export default function Header() {
 							<Divider variant='middle' />
 						</List>
 					</Collapse>
+					<Divider variant='middle' />
+					<ListItem
+						button
+						onClick={(e) => {
+							handleClick(e, '/contact');
+						}}
+					>
+						<ListItemText primary='Contact Us' />
+					</ListItem>
+					<Divider variant='middle' />
+					<ListItem
+						button
+						onClick={(e) => {
+							handleClick(e, 'https://app.clio.com/client_connect/');
+						}}
+					>
+						<ListItemText primary='Client Portal' />
+					</ListItem>
 				</List>
 			</MuiDrawer>
 			<AppBar position='static' color='transparent'>
