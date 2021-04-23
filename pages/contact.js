@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 	btn: { margin: theme.spacing(2), background: '#1651A1' },
 	container: {
 		position: 'relative',
-		height: '300px',
+		maxHeight: '300px',
 		overflow: 'hidden',
 	},
 	root: {
