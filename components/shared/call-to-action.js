@@ -33,14 +33,16 @@ const CallToAction = () => {
 		<Box className={classes.root} component='section' id='call-to-action'>
 			<Grid container alignItems='center'>
 				<Grid item xs={12} sm={6}>
-					<Typography variant='h2'>Need Help?</Typography>
-					<Divider variant='middle' />
-					<Typography>
-						We are a full-service law firm and can assist with legal issues
-						including wills, trusts, probate, family matters, business
-						formation, trademarks and guardianship matters. Contact us today to
-						find out how we can be of assistance.
-					</Typography>
+					<Container>
+						<Typography variant='h2'>Need Help?</Typography>
+						<Divider variant='middle' />
+						<Typography>
+							We are a full-service law firm and can assist with legal issues
+							including wills, trusts, probate, family matters, business
+							formation, trademarks and guardianship matters. Contact us today
+							to find out how we can be of assistance.
+						</Typography>
+					</Container>{' '}
 				</Grid>
 				<Grid className={classes.rightBox} item xs={12} sm={6}>
 					<Container>

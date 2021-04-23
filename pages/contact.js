@@ -17,6 +17,8 @@ const useStyles = makeStyles((theme) => ({
 	btn: { margin: theme.spacing(2), background: '#1651A1' },
 	container: {
 		position: 'relative',
+		height: '300px',
+		overflow: 'hidden',
 	},
 	root: {
 		flexGrow: 1,
@@ -42,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	pageImg: {
 		[theme.breakpoints.down('sm')]: { marginTop: theme.spacing(1) },
+		padding: theme.spacing(2),
 	},
 	paperContent: {
 		margin: theme.spacing(3),
@@ -102,11 +105,11 @@ export default function ContactPage() {
 					Contact Us
 				</Typography>
 			</Box>
-			<Grid container>
+			<Grid container alignItems='center'>
 				<Grid item sm={6}>
 					<Paper className={classes.formContent}>
 						<Typography variant='h5'>
-							Schedule your Free 15 Minute Consultation.
+							Schedule Your Free 15 Minute Consultation
 						</Typography>
 						<form className={classes.form} autoComplete='off'>
 							<div>
@@ -139,7 +142,6 @@ export default function ContactPage() {
 								<TextField
 									name='message'
 									label='How can we help you?'
-									helperText='Please keep your message to under 150 words.'
 									variant='outlined'
 									multiline
 									rows={4}
@@ -159,7 +161,7 @@ export default function ContactPage() {
 					</Paper>
 				</Grid>
 				<Grid item sm={6}>
-					<Paper className={classes.paperContent}>
+					<Box className={classes.paperContent}>
 						<Typography>
 							We are a full-service law firm and can assist with legal issues
 							including wills, trusts, probate, family matters, business
@@ -170,12 +172,12 @@ export default function ContactPage() {
 							<Image
 								src='/images/contact/phone-photo.png'
 								alt='help image'
-								width={200}
-								height={300}
+								width={300}
+								height={400}
 								layout='intrinsic'
 							/>
 						</Box>
-					</Paper>
+					</Box>
 				</Grid>
 			</Grid>
 

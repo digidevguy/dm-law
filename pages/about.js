@@ -1,13 +1,5 @@
-import {
-	Box,
-	Container,
-	Divider,
-	Grid,
-	makeStyles,
-	Typography,
-} from '@material-ui/core';
+import { Box, Divider, Grid, makeStyles, Typography } from '@material-ui/core';
 import Image from 'next/image';
-import { Fragment } from 'react';
 
 import Footer from '../components/layouts/footer';
 import CallToAction from '../components/shared/call-to-action';
@@ -22,6 +14,8 @@ const useStyles = makeStyles((theme) => ({
 	},
 	container: {
 		position: 'relative',
+		maxHeight: '300px',
+		overflow: 'hidden',
 	},
 	title: {
 		position: 'absolute',
@@ -39,8 +33,9 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.down('sm')]: { marginTop: theme.spacing(2) },
 	},
 	altLawyerDiv: {
-		[theme.breakpoints.down('sm')]: { flexDirection: 'column-reverse' },
+		[theme.breakpoints.down('xs')]: { flexDirection: 'column-reverse' },
 	},
+	lawyerSection: { padding: theme.spacing(3) },
 }));
 
 export default function AboutPage() {
@@ -60,7 +55,11 @@ export default function AboutPage() {
 					About Page
 				</Typography>
 			</Box>
-			<Box component='section' id='lawyer-one'>
+			<Box
+				component='section'
+				id='lawyer-one'
+				className={classes.lawyerSection}
+			>
 				<Grid container alignItems='center' justify='center' spacing='2'>
 					<Grid className={classes.lawyerImg} item sm={6}>
 						<Image
@@ -68,7 +67,6 @@ export default function AboutPage() {
 							alt='Conner Dyer Profile Photo'
 							width={175}
 							height={225}
-							layout='intrinsic'
 						/>
 					</Grid>
 					<Grid item sm={6}>
@@ -115,7 +113,11 @@ export default function AboutPage() {
 				</Grid>
 			</Box>
 			<Divider variant='middle' />
-			<Box component='section' id='lawyer-two'>
+			<Box
+				component='section'
+				id='lawyer-two'
+				className={classes.lawyerSection}
+			>
 				<Grid
 					className={classes.altLawyerDiv}
 					container

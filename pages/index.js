@@ -2,6 +2,7 @@ import Image from 'next/image';
 import {
 	Box,
 	CardContent,
+	Container,
 	Divider,
 	Grid,
 	makeStyles,
@@ -12,7 +13,6 @@ import Card from '../components/home/Card';
 import Footer from '../components/layouts/footer';
 import Link from '../src/Link';
 import CallToAction from '../components/shared/call-to-action';
-import { InsertChartOutlinedTwoTone, ScatterPlot } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -30,6 +30,10 @@ const useStyles = makeStyles((theme) => ({
 	container: {
 		position: 'relative',
 		overflow: 'hidden',
+		maxHeight: '300px',
+		padding: theme.spacing(2),
+		borderWidth: '5px',
+		borderStyle: 'double',
 	},
 	titleArea: {
 		position: 'absolute',
@@ -42,22 +46,30 @@ const useStyles = makeStyles((theme) => ({
 	subtitle: {
 		fontWeight: '300',
 		fontStyle: 'italic',
+		textAlign: 'center',
+		fontFamily: 'serif',
+		fontSize: '2rem',
+		[theme.breakpoints.down('sm')]: { fontSize: '1.3rem' },
+		[theme.breakpoints.down('xs')]: { fontSize: '1rem' },
 	},
 	title: {
 		fontWeight: '900',
+		textAlign: 'center',
+		fontFamily: 'serif',
+	},
+	bannerImg: {
+		textAlign: 'center',
 	},
 }));
-
-const placeholderCardText =
-	'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed odio morbi quis commodo odio aenean sed adipiscing diam.';
 
 export default function Home() {
 	const classes = useStyles();
 
 	return (
 		<div className={classes.root}>
-			<Box className={classes.container}>
-				<Box>
+			<Box>
+				<Grid container alignItems='center' className={classes.container}>
+					{/* <Box>
 					<Image
 						layout='responsive'
 						src='/images/home/tingey-injury-law-firm-veNb0DDegzE-unsplash.jpg'
@@ -65,15 +77,25 @@ export default function Home() {
 						width={1920}
 						height={600}
 					/>
-				</Box>
-				<Box className={classes.titleArea}>
-					<Typography variant='h1' className={classes.title}>
-						Dyer & Mauro
-					</Typography>
-					<Typography variant='subtitle1' className={classes.subtitle}>
-						Helping Protect Your Tomorrow
-					</Typography>
-				</Box>
+				</Box> */}
+					<Grid item xs={6} className={classes.bannerImg}>
+						<Image
+							src='/images/dm-logo.png'
+							alt='Dyer and Mauro Logo'
+							height='209.8125'
+							width='391.3125'
+							layout='intrinsic'
+						/>
+					</Grid>
+					<Grid item xs={6}>
+						<Typography variant='h1' className={classes.title}>
+							Dyer & Mauro
+						</Typography>
+						<Typography className={classes.subtitle}>
+							Helping Protect Your Tomorrow
+						</Typography>
+					</Grid>
+				</Grid>
 			</Box>
 			<Box component='section' id='features'>
 				<Typography variant='h3'>Features</Typography>
