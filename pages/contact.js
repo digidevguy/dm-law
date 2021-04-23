@@ -1,16 +1,17 @@
 import {
 	Box,
 	Button,
-	Divider,
 	Grid,
 	makeStyles,
 	Paper,
+	Snackbar,
 	TextField,
 	Typography,
 } from '@material-ui/core';
 import Image from 'next/image';
 import { useState } from 'react';
 
+import Toast from '../src/Toast';
 import Footer from '../components/layouts/footer';
 
 const useStyles = makeStyles((theme) => ({
@@ -71,6 +72,7 @@ export default function ContactPage() {
 		message: '',
 		bttc: '',
 	});
+	const [open, setOpen] = useState(false);
 	const [error, setError] = useState({});
 
 	const handleInputChange = (e) => {
@@ -78,21 +80,43 @@ export default function ContactPage() {
 		setFormValues({ ...formValues, [name]: value });
 	};
 
-	const submitHandler = (e) => {
-		e.preventDefault();
-		// console.log(formValues);
+	const handleToast = () => {
+		setOpen(!open);
+	};
 
-		fetch('/api/message', {
-			method: 'POST',
-			body: JSON.stringify(formValues),
-			headers: { 'Content-Type': 'application/json' },
-		})
-			.then((response) => response.json())
-			.then((data) => console.log(data));
+	const handleToastClose = (e, reason) => {
+		if (reason === 'clickaway') {
+			return;
+		}
+
+		setOpen(false);
+	};
+
+	const submitHandler = async (e) => {
+		e.preventDefault();
+
+		// try {
+		// 	const response = await fetch('/api/message', {
+		// 		method: 'POST',
+		// 		body: JSON.stringify(formValues),
+		// 		headers: { 'Content-Type': 'application/json' },
+		// 	});
+		// 	const responseData = await response.json();
+		// 	if (response.ok) {
+		// 		handleSnack();
+		// 		console.log(responseData);
+		// 	}
+		// } catch (err) {}
+		handleToast();
 	};
 
 	return (
 		<div className={classes.root}>
+			<Toast
+				open={open}
+				onClose={handleToastClose}
+				message='Message sent successfully!'
+			/>
 			<Box className={classes.container}>
 				<Image
 					layout='responsive'
@@ -181,7 +205,6 @@ export default function ContactPage() {
 				</Grid>
 			</Grid>
 
-			{/* <section></section> */}
 			<Footer />
 		</div>
 	);

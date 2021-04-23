@@ -15,6 +15,7 @@
     "@material-ui/icons": "^4.11.2",
     "clsx": "^1.1.1",
     "gray-matter": "^4.0.2",
+    "material-ui-nested-menu-item": "^1.0.2",
     "next": "10.0.9",
     "nodemailer": "^6.5.0",
     "prop-types": "^15.7.2",

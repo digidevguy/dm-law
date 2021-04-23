@@ -25,6 +25,8 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { useEffect, useRef, useState } from 'react';
 import { ExpandLess, ExpandMore } from '@material-ui/icons';
 
+import NestedMenuItem from 'material-ui-nested-menu-item';
+
 const useStyles = makeStyles((theme) => ({
 	root: {
 		flexGrow: 1,
@@ -65,6 +67,12 @@ export default function Header() {
 	const [nestedOpen, setNestedOpen] = useState(false);
 	const [menuOpen, setMenuOpen] = useState(false);
 	const anchorRef = useRef(null);
+	const [menuPosition, setMenuPosition] = useState(null);
+
+	//Practice Area state objects
+	const [blOpen, setBLOpen] = useState(false);
+	const [estateOpen, setestateOpen] = useState(false);
+	const [ipOpen, setIPOpen] = useState(false);
 
 	const handleDrawerToggle = () => {
 		setOpen(!open);
@@ -104,6 +112,14 @@ export default function Header() {
 			setMenuOpen(false);
 		}
 	}
+
+	const handleItemClick = (e) => {
+		if (menuPosition) {
+			return;
+		}
+		event.preventDefault();
+		setMenuPosition({ top: e.pageY, left: pageX });
+	};
 
 	const prevOpen = useRef(menuOpen);
 	useEffect(() => {
@@ -152,17 +168,71 @@ export default function Header() {
 						<List component='div' disablePadding>
 							<ListItem
 								button
-								onClick={(e) => {
-									handleClick(e, '/practice-area/getting-started-with-nextjs');
+								onClick={() => {
+									setBLOpen(!blOpen);
 								}}
 							>
-								<ListItemText primary='Estate Planning' />
+								<ListItemText primary='Business Law' />
+								{blOpen ? <ExpandMore /> : <ExpandLess />}
 							</ListItem>
+							<Divider variant='middle' />
+							<Collapse in={blOpen} timeoute='auto' unmountOnExit>
+								<List>
+									<ListItem
+										button
+										onClick={(e) => {
+											handleClick(e, '/practice-area/formation');
+										}}
+									>
+										<ListItemText primary='Formation' />
+									</ListItem>
+									<Divider variant='middle' />
+									<ListItem
+										button
+										onClick={(e) => {
+											handleClick(e, '/practice-area/noncompete-nda');
+										}}
+									>
+										<ListItemText primary='Non-Compete - NDA' />
+									</ListItem>
+								</List>
+							</Collapse>
 							<Divider variant='middle' />
 							<ListItem
 								button
+								onClick={() => {
+									setestateOpen(!estateOpen);
+								}}
+							>
+								<ListItemText primary='Estate Planning' />
+								{estateOpen ? <ExpandMore /> : <ExpandLess />}
+							</ListItem>
+							<Divider variant='middle' />
+							<Collapse in={estateOpen} timeout='auto' unmountOnExit>
+								<List>
+									<ListItem
+										button
+										onClick={(e) => {
+											handleClick(e, '/practice-area/probate');
+										}}
+									>
+										<ListItemText primary='Probate' />
+									</ListItem>
+									<Divider variant='middle' />
+									<ListItem
+										button
+										onClick={(e) => {
+											handleClick(e, '/practice-area/will-and-trust');
+										}}
+									>
+										<ListItemText primary='Will & Trust' />
+									</ListItem>
+								</List>
+							</Collapse>
+							<ListItem
+								button
 								onClick={(e) => {
-									handleClick(e, '/practice-area/mastering-javascript');
+									handleClick(e, '/practice-area/family');
 								}}
 							>
 								<ListItemText primary='Family Law' />
@@ -170,22 +240,35 @@ export default function Header() {
 							<Divider variant='middle' />
 							<ListItem
 								button
-								onClick={(e) => {
-									handleClick(e, '/practice-area/getting-started-with-nextjs');
+								onClick={() => {
+									setIPOpen(!ipOpen);
 								}}
 							>
-								<ListItemText primary='Business Practice' />
+								<ListItemText primary='Intellectual Property' />
+								{ipOpen ? <ExpandMore /> : <ExpandLess />}
 							</ListItem>
 							<Divider variant='middle' />
-							<ListItem
-								button
-								onClick={(e) => {
-									handleClick(e, '/practice-area/mastering-javascript');
-								}}
-							>
-								<ListItemText primary='Intellectual Properly' />
-							</ListItem>
-							<Divider variant='middle' />
+							<Collapse in={ipOpen} timeout='auto' unmountOnExit>
+								<List>
+									<ListItem
+										button
+										onClick={(e) => {
+											handleClick(e, '/practice-area/trade-secrets');
+										}}
+									>
+										<ListItemText primary='Trade Secrets' />
+									</ListItem>
+									<Divider variant='middle' />
+									<ListItem
+										button
+										onClick={(e) => {
+											handleClick(e, '/practice-area/trademark');
+										}}
+									>
+										<ListItemText primary='Trademark' />
+									</ListItem>
+								</List>
+							</Collapse>
 						</List>
 					</Collapse>
 					<Divider variant='middle' />
@@ -283,46 +366,76 @@ export default function Header() {
 												id='menu-list-grow'
 												onKeyDown={handleListKeyDown}
 											>
-												<MenuItem
-													onClick={(e) => {
-														handleNavClick(
-															e,
-															'/practice-area/getting-started-with-nextjs'
-														);
-													}}
+												<NestedMenuItem
+													label='Business Law'
+													parentMenuOpen={!!menuOpen}
 												>
-													Estate Planning
-												</MenuItem>
+													<MenuItem
+														onClick={(e) => {
+															handleNavClick(e, '/practice-area/formation');
+														}}
+													>
+														Formation
+													</MenuItem>
+													<MenuItem
+														onClick={(e) => {
+															handleNavClick(
+																e,
+																'/practice-area/noncompete-nda'
+															);
+														}}
+													>
+														Non-Compete - NDA
+													</MenuItem>
+												</NestedMenuItem>
+												<NestedMenuItem
+													label='Estate Planning'
+													parentMenuOpen={!!menuOpen}
+												>
+													<MenuItem
+														onClick={(e) => {
+															handleNavClick(e, '/practice-area/probate');
+														}}
+													>
+														Probate
+													</MenuItem>
+													<MenuItem
+														onClick={(e) => {
+															handleNavClick(
+																e,
+																'/practice-area/will-and-trust'
+															);
+														}}
+													>
+														Will & Trust
+													</MenuItem>
+												</NestedMenuItem>
 												<MenuItem
 													onClick={(e) => {
-														handleNavClick(
-															e,
-															'/practice-area/mastering-javascript'
-														);
+														handleNavClick(e, '/practice-area/family');
 													}}
 												>
 													Family Law
 												</MenuItem>
-												<MenuItem
-													onClick={(e) => {
-														handleNavClick(
-															e,
-															'/practice-area/getting-started-with-nextjs'
-														);
-													}}
+												<NestedMenuItem
+													label='Intellectual Property'
+													parentMenuOpen={!!menuOpen}
 												>
-													Business Law
-												</MenuItem>
-												<MenuItem
-													onClick={(e) => {
-														handleNavClick(
-															e,
-															'/practice-area/mastering-javascript'
-														);
-													}}
-												>
-													Intellectual Property
-												</MenuItem>
+													<MenuItem
+														onClick={(e) => {
+															handleNavClick(e, '/practice-area/trade-secrets');
+														}}
+													>
+														Trade Secrets
+													</MenuItem>
+													<MenuItem
+														onClick={(e) => {
+															handleNavClick(e, '/practice-area/trademark');
+														}}
+													>
+														Trademark
+													</MenuItem>
+												</NestedMenuItem>
 											</MenuList>
 										</ClickAwayListener>
 									</Paper>

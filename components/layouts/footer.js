@@ -16,6 +16,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import { useRef, useState } from 'react';
 
+import NestedMenuItem from 'material-ui-nested-menu-item';
 import Link from '../../src/Link';
 
 const useStyles = makeStyles((theme) => ({
@@ -132,46 +133,70 @@ export default function footer() {
 										id='menu-list-grow'
 										onKeyDown={handleListKeyDown}
 									>
-										<MenuItem
-											onClick={(e) => {
-												handleFooterClick(
-													e,
-													'/practice-area/getting-started-with-nextjs'
-												);
-											}}
+										<NestedMenuItem
+											label='Business Law'
+											parentMenuOpen={!!open}
 										>
-											Estate Planning
-										</MenuItem>
+											<MenuItem
+												onClick={(e) => {
+													handleFooterClick(e, '/practice-area/formation');
+												}}
+											>
+												Formation
+											</MenuItem>
+											<MenuItem
+												onClick={(e) => {
+													handleFooterClick(e, '/practice-area/noncompete-nda');
+												}}
+											>
+												Non-Compete - NDA
+											</MenuItem>
+										</NestedMenuItem>
+										<NestedMenuItem
+											label='Estate Planning'
+											parentMenuOpen={!!open}
+										>
+											<MenuItem
+												onClick={(e) => {
+													handleFooterClick(e, '/practice-area/probate');
+												}}
+											>
+												Probate
+											</MenuItem>
+											<MenuItem
+												onClick={(e) => {
+													handleFooterClick(e, '/practice-area/will-and-trust');
+												}}
+											>
+												Will & Trust
+											</MenuItem>
+										</NestedMenuItem>
 										<MenuItem
 											onClick={(e) => {
-												handleFooterClick(
-													e,
-													'/practice-area/mastering-javascript'
-												);
+												handleFooterClick(e, '/practice-area/family');
 											}}
 										>
 											Family Law
 										</MenuItem>
-										<MenuItem
-											onClick={(e) => {
-												handleFooterClick(
-													e,
-													'/practice-area/getting-started-with-nextjs'
-												);
-											}}
+										<NestedMenuItem
+											label='Intellectual Property'
+											parentMenuOpen={!!open}
 										>
-											Business Law
-										</MenuItem>
-										<MenuItem
-											onClick={(e) => {
-												handleFooterClick(
-													e,
-													'/practice-area/mastering-javascript'
-												);
-											}}
-										>
-											Intellectual Property
-										</MenuItem>
+											<MenuItem
+												onClick={(e) => {
+													handleFooterClick(e, '/practice-area/trade-secrets');
+												}}
+											>
+												Trade Secrets
+											</MenuItem>
+											<MenuItem
+												onClick={(e) => {
+													handleFooterClick(e, '/practice-area/trademark');
+												}}
+											>
+												Trademark
+											</MenuItem>
+										</NestedMenuItem>
 									</MenuList>
 								</ClickAwayListener>
 							</Paper>
