@@ -8,15 +8,13 @@ However, there is no routine process for everyone because each business has its 
 
 We can help you choose the correct type of entity based on your specific needs; these include:
 
-|                                      |                                               |
-| ------------------------------------ | --------------------------------------------- |
-| Limited Liability Companies (LLC)    | Professional Limited Liability Company (PLLC) |
-| Corporations (C-Corp)                | Professional Corporation (PC)                 |
-| Nonprofits and tax-exempt entities   | Professional Association (PA)                 |
-| Sole proprietorship                  |
-| General Partnerships (GP)            |
-| Limited Partnerships (LP)            |
-| Limited Liability Partnerships (LLP) |
+|                                    |                                               |
+| ---------------------------------- | --------------------------------------------- |
+| Limited Liability Companies (LLC)  | Limited Partnerships (LP)                     |
+| Corporations (C-Corp)              | Limited Liability Partnerships (LLP)          |
+| Nonprofits and tax-exempt entities | Professional Limited Liability Company (PLLC) |
+| Sole proprietorship                | Professional Corporation (PC)                 |
+| General Partnerships (GP)          | Professional Association (PA)                 |
 
 ## Certificate of Formation or Articles of Incorporation
 

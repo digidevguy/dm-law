@@ -1,11 +1,10 @@
 import Image from 'next/image';
 import {
 	Box,
-	Container,
+	Button,
 	Divider,
 	Grid,
 	makeStyles,
-	Paper,
 	Typography,
 } from '@material-ui/core';
 
@@ -13,13 +12,12 @@ import Card from '../components/home/Card';
 import Footer from '../components/layouts/footer';
 import Link from '../src/Link';
 import CallToAction from '../components/shared/call-to-action';
-import { urlObjectKeys } from 'next/dist/next-server/lib/utils';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
 		flexGrow: 1,
 		'& #features': {
-			backgroundColor: '#f3f4ed',
+			backgroundColor: '#edeef7',
 			// backgroundColor: '#1651A1',
 			textAlign: 'center',
 			padding: theme.spacing(1),
@@ -31,6 +29,17 @@ const useStyles = makeStyles((theme) => ({
 		'& #location-info': {
 			textAlign: 'center',
 			// width: '30%',
+		},
+		'& #areas-of-practice': {
+			textAlign: 'center',
+			margin: theme.spacing(1),
+			padding: theme.spacing(1),
+			'& .MuiGrid-container': { margin: theme.spacing(1) },
+			'& .MuiGrid-item': {
+				[theme.breakpoints.down('xs')]: { margin: theme.spacing(1) },
+				// margin: theme.spacing(1),
+			},
+			'& ul': { listStyle: 'none' },
 		},
 	},
 	container: {
@@ -62,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
 		textAlign: 'center',
 		fontFamily: 'Libre Baskerville',
 	},
-	bannerImg: {},
+
 	bannerLogo: {
 		textAlign: 'center',
 	},
@@ -127,19 +136,92 @@ export default function Home() {
 					</Grid>
 				</Grid>
 			</Box>
+			<Box component='section' id='areas-of-practice'>
+				<Typography variant='h3'>Areas of Practice</Typography>
+				<Grid container alignItems='center' justify='center'>
+					<Grid item sm={6}>
+						<Image
+							src='/images/home/florian-klauer-mk7D-4UCfmg-unsplash.jpg'
+							alt='Typewriter picture'
+							height={209.32}
+							width={159.64}
+						/>
+					</Grid>
+					<Grid item sm={6}>
+						<Typography>
+							Here at Dyer & Mauro, we offer several areas of practice to our
+							clients. These options incude:
+						</Typography>
+						<ul>
+							<li>
+								<Button
+									variant='text'
+									component={Link}
+									href='/practice-area/wills-and-trusts'
+								>
+									Wills & Trust
+								</Button>
+							</li>
+							<li>
+								<Button
+									variant='text'
+									component={Link}
+									href='/practice-area/probate'
+								>
+									Probate
+								</Button>
+							</li>
+							<li>
+								<Button
+									variant='text'
+									component={Link}
+									href='/practice-area/family'
+								>
+									Family Law
+								</Button>
+							</li>
+							<li>
+								<Button
+									variant='text'
+									component={Link}
+									href='/practice-area/trademark'
+								>
+									Trademark
+								</Button>
+							</li>
+							<li>
+								<Button
+									variant='text'
+									component={Link}
+									href='/practice-area/trade-secrets'
+								>
+									Trade Secrets
+								</Button>
+							</li>
+							<li>
+								<Button
+									variant='text'
+									component={Link}
+									href='/practice-area/formation'
+								>
+									Formation
+								</Button>
+							</li>
+							<li>
+								<Button
+									variant='text'
+									component={Link}
+									href='/practice-area/noncompete-nda'
+								>
+									Non-Compete - NDA
+								</Button>
+							</li>
+						</ul>
+					</Grid>
+				</Grid>
+				<Divider variant='middle' />
+			</Box>
 			<CallToAction />
-			<Paper
-				component='section'
-				id='location-info'
-				variant='outlined'
-				square={false}
-			>
-				<Typography variant='h6'>Address</Typography>
-				<Typography>
-					3626 North Hall Street, Ste 610, Dallas, TX 75219
-				</Typography>
-				<Typography>In person meeting by appointment only.</Typography>
-			</Paper>
 			<Footer />
 		</div>
 	);

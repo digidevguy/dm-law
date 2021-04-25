@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
 		color: '#00303f',
 	},
 	drawer: {
-		width: '180px',
+		width: '202px',
 	},
 	popupMenu: {
 		zIndex: 1,
@@ -168,67 +168,23 @@ export default function Header() {
 						<List component='div' disablePadding>
 							<ListItem
 								button
-								onClick={() => {
-									setBLOpen(!blOpen);
+								onClick={(e) => {
+									handleClick(e, '/practice-area/wills-and-trusts');
 								}}
 							>
-								<ListItemText primary='Business Law' />
-								{blOpen ? <ExpandMore /> : <ExpandLess />}
+								<ListItemText primary='Wills & Trusts' />
 							</ListItem>
-							<Divider variant='middle' />
-							<Collapse in={blOpen} timeoute='auto' unmountOnExit>
-								<List>
-									<ListItem
-										button
-										onClick={(e) => {
-											handleClick(e, '/practice-area/formation');
-										}}
-									>
-										<ListItemText primary='Formation' />
-									</ListItem>
-									<Divider variant='middle' />
-									<ListItem
-										button
-										onClick={(e) => {
-											handleClick(e, '/practice-area/noncompete-nda');
-										}}
-									>
-										<ListItemText primary='Non-Compete - NDA' />
-									</ListItem>
-								</List>
-							</Collapse>
 							<Divider variant='middle' />
 							<ListItem
 								button
-								onClick={() => {
-									setestateOpen(!estateOpen);
+								onClick={(e) => {
+									handleClick(e, '/practice-area/probate');
 								}}
 							>
-								<ListItemText primary='Estate Planning' />
-								{estateOpen ? <ExpandMore /> : <ExpandLess />}
+								<ListItemText primary='Probate' />
 							</ListItem>
 							<Divider variant='middle' />
-							<Collapse in={estateOpen} timeout='auto' unmountOnExit>
-								<List>
-									<ListItem
-										button
-										onClick={(e) => {
-											handleClick(e, '/practice-area/probate');
-										}}
-									>
-										<ListItemText primary='Probate' />
-									</ListItem>
-									<Divider variant='middle' />
-									<ListItem
-										button
-										onClick={(e) => {
-											handleClick(e, '/practice-area/will-and-trust');
-										}}
-									>
-										<ListItemText primary='Wills & Trusts' />
-									</ListItem>
-								</List>
-							</Collapse>
+
 							<ListItem
 								button
 								onClick={(e) => {
@@ -269,6 +225,38 @@ export default function Header() {
 									</ListItem>
 								</List>
 							</Collapse>
+							<ListItem
+								button
+								onClick={() => {
+									setBLOpen(!blOpen);
+								}}
+							>
+								<ListItemText primary='Business Law' />
+								{blOpen ? <ExpandMore /> : <ExpandLess />}
+							</ListItem>
+							<Divider variant='middle' />
+							<Collapse in={blOpen} timeoute='auto' unmountOnExit>
+								<List>
+									<ListItem
+										button
+										onClick={(e) => {
+											handleClick(e, '/practice-area/formation');
+										}}
+									>
+										<ListItemText primary='Formation' />
+									</ListItem>
+									<Divider variant='middle' />
+									<ListItem
+										button
+										onClick={(e) => {
+											handleClick(e, '/practice-area/noncompete-nda');
+										}}
+									>
+										<ListItemText primary='Non-Compete - NDA' />
+									</ListItem>
+								</List>
+							</Collapse>
+							<Divider variant='middle' />
 						</List>
 					</Collapse>
 					<Divider variant='middle' />
@@ -366,50 +354,23 @@ export default function Header() {
 												id='menu-list-grow'
 												onKeyDown={handleListKeyDown}
 											>
-												<NestedMenuItem
-													label='Business Law'
-													parentMenuOpen={!!menuOpen}
+												<MenuItem
+													onClick={(e) => {
+														handleNavClick(
+															e,
+															'/practice-area/wills-and-trusts'
+														);
+													}}
 												>
-													<MenuItem
-														onClick={(e) => {
-															handleNavClick(e, '/practice-area/formation');
-														}}
-													>
-														Formation
-													</MenuItem>
-													<MenuItem
-														onClick={(e) => {
-															handleNavClick(
-																e,
-																'/practice-area/noncompete-nda'
-															);
-														}}
-													>
-														Non-Compete - NDA
-													</MenuItem>
-												</NestedMenuItem>
-												<NestedMenuItem
-													label='Estate Planning'
-													parentMenuOpen={!!menuOpen}
+													Wills & Trusts
+												</MenuItem>
+												<MenuItem
+													onClick={(e) => {
+														handleNavClick(e, '/practice-area/probate');
+													}}
 												>
-													<MenuItem
-														onClick={(e) => {
-															handleNavClick(e, '/practice-area/probate');
-														}}
-													>
-														Probate
-													</MenuItem>
-													<MenuItem
-														onClick={(e) => {
-															handleNavClick(
-																e,
-																'/practice-area/will-and-trust'
-															);
-														}}
-													>
-														Wills & Trusts
-													</MenuItem>
-												</NestedMenuItem>
+													Probate
+												</MenuItem>
 												<MenuItem
 													onClick={(e) => {
 														handleNavClick(e, '/practice-area/family');
@@ -434,6 +395,28 @@ export default function Header() {
 														}}
 													>
 														Trade Secrets
+													</MenuItem>
+												</NestedMenuItem>
+												<NestedMenuItem
+													label='Business Law'
+													parentMenuOpen={!!menuOpen}
+												>
+													<MenuItem
+														onClick={(e) => {
+															handleNavClick(e, '/practice-area/formation');
+														}}
+													>
+														Formation
+													</MenuItem>
+													<MenuItem
+														onClick={(e) => {
+															handleNavClick(
+																e,
+																'/practice-area/noncompete-nda'
+															);
+														}}
+													>
+														Non-Compete - NDA
 													</MenuItem>
 												</NestedMenuItem>
 											</MenuList>

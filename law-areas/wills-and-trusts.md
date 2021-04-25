@@ -1,5 +1,5 @@
 ---
-title: 'Will and Trust'
+title: 'Wills & Trusts'
 ---
 
 ## Will Bundles

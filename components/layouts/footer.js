@@ -134,44 +134,20 @@ export default function footer() {
 										id='menu-list-grow'
 										onKeyDown={handleListKeyDown}
 									>
-										<NestedMenuItem
-											label='Business Law'
-											parentMenuOpen={!!open}
+										<MenuItem
+											onClick={(e) => {
+												handleFooterClick(e, '/practice-area/wills-and-trusts');
+											}}
 										>
-											<MenuItem
-												onClick={(e) => {
-													handleFooterClick(e, '/practice-area/formation');
-												}}
-											>
-												Formation
-											</MenuItem>
-											<MenuItem
-												onClick={(e) => {
-													handleFooterClick(e, '/practice-area/noncompete-nda');
-												}}
-											>
-												Non-Compete - NDA
-											</MenuItem>
-										</NestedMenuItem>
-										<NestedMenuItem
-											label='Estate Planning'
-											parentMenuOpen={!!open}
+											Wills & Trusts
+										</MenuItem>
+										<MenuItem
+											onClick={(e) => {
+												handleFooterClick(e, '/practice-area/probate');
+											}}
 										>
-											<MenuItem
-												onClick={(e) => {
-													handleFooterClick(e, '/practice-area/probate');
-												}}
-											>
-												Probate
-											</MenuItem>
-											<MenuItem
-												onClick={(e) => {
-													handleFooterClick(e, '/practice-area/will-and-trust');
-												}}
-											>
-												Wills & Trusts
-											</MenuItem>
-										</NestedMenuItem>
+											Probate
+										</MenuItem>
 										<MenuItem
 											onClick={(e) => {
 												handleFooterClick(e, '/practice-area/family');
@@ -196,6 +172,25 @@ export default function footer() {
 												}}
 											>
 												Trade Secrets
+											</MenuItem>
+										</NestedMenuItem>
+										<NestedMenuItem
+											label='Business Law'
+											parentMenuOpen={!!open}
+										>
+											<MenuItem
+												onClick={(e) => {
+													handleFooterClick(e, '/practice-area/formation');
+												}}
+											>
+												Formation
+											</MenuItem>
+											<MenuItem
+												onClick={(e) => {
+													handleFooterClick(e, '/practice-area/noncompete-nda');
+												}}
+											>
+												Non-Compete - NDA
 											</MenuItem>
 										</NestedMenuItem>
 									</MenuList>

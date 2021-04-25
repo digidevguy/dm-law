@@ -1,14 +1,17 @@
+import { useRouter } from 'next/router';
+import Image from 'next/image';
 import {
+	Backdrop,
 	Box,
 	Button,
+	CircularProgress,
 	Grid,
 	makeStyles,
 	Paper,
-	Snackbar,
 	TextField,
 	Typography,
 } from '@material-ui/core';
-import Image from 'next/image';
+
 import { useState } from 'react';
 
 import Toast from '../src/Toast';
@@ -61,6 +64,10 @@ const useStyles = makeStyles((theme) => ({
 		top: '50%',
 		left: '15%',
 	},
+	spinner: {
+		zIndex: theme.zIndex.drawer + 1,
+		color: '#fff',
+	},
 }));
 
 export default function ContactPage() {
@@ -73,14 +80,18 @@ export default function ContactPage() {
 		bttc: '',
 	});
 	const [open, setOpen] = useState(false);
-	const [error, setError] = useState({});
+	const [resMessage, setResMessage] = useState('');
+	const [loading, setLoading] = useState(false);
+	const [error, setError] = useState(false);
+	const router = useRouter();
 
 	const handleInputChange = (e) => {
 		const { name, value } = e.target;
 		setFormValues({ ...formValues, [name]: value });
 	};
 
-	const handleToast = () => {
+	const handleToast = (string) => {
+		setResMessage(string);
 		setOpen(!open);
 	};
 
@@ -94,29 +105,42 @@ export default function ContactPage() {
 
 	const submitHandler = async (e) => {
 		e.preventDefault();
+		setError(false);
+		setLoading(true);
 
-		// try {
-		// 	const response = await fetch('/api/message', {
-		// 		method: 'POST',
-		// 		body: JSON.stringify(formValues),
-		// 		headers: { 'Content-Type': 'application/json' },
-		// 	});
-		// 	const responseData = await response.json();
-		// 	if (response.ok) {
-		// 		handleSnack();
-		// 		console.log(responseData);
-		// 	}
-		// } catch (err) {}
-		handleToast();
+		if (!formValues.email || !formValues.email.includes('@')) {
+			setLoading(false);
+			setError(true);
+			return;
+		}
+
+		try {
+			const response = await fetch('/api/message', {
+				method: 'POST',
+				body: JSON.stringify(formValues),
+				headers: { 'Content-Type': 'application/json' },
+			});
+			const responseData = await response.json();
+			if (response.ok) {
+				setLoading(false);
+				console.log(responseData);
+				handleToast('Your message has been sent!');
+				setTimeout(() => router.push('/'), 3000);
+			} else {
+				setLoading(false);
+				handleToast('There was an error. Please try again.');
+			}
+		} catch (err) {
+			handleToast('There was an error. Please try again.');
+		}
 	};
 
 	return (
 		<div className={classes.root}>
-			<Toast
-				open={open}
-				onClose={handleToastClose}
-				message='Message sent successfully!'
-			/>
+			<Backdrop className={classes.spinner} open={loading}>
+				<CircularProgress color='inherit' />
+			</Backdrop>
+			<Toast open={open} onClose={handleToastClose} message={resMessage} />
 			<Box className={classes.container}>
 				<Image
 					layout='responsive'
@@ -155,6 +179,12 @@ export default function ContactPage() {
 									label='Email Address'
 									onChange={handleInputChange}
 									value={formValues.email}
+									error={error}
+									helperText={
+										error
+											? 'Email is either missing or invalid. Please try again'
+											: ''
+									}
 								/>
 								<TextField
 									name='bttc'

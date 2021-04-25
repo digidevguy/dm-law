@@ -55,7 +55,7 @@ export default function AboutPage() {
 					height={175}
 				/>
 				<Typography className={classes.title} variant='h1'>
-					About Page
+					About Us
 				</Typography>
 			</Box>
 			<Box
@@ -76,27 +76,18 @@ export default function AboutPage() {
 						<Typography variant='h3'>Conner Dyer</Typography>
 						<Box className={classes.descriptionText}>
 							<Typography className={classes.lawyerDescription} variant='body1'>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-								eiusmod tempor incididunt ut labore et dolore magna aliqua.
-								Lectus vestibulum mattis ullamcorper velit sed ullamcorper
-								morbi. Dolor sit amet consectetur adipiscing elit pellentesque
-								habitant. Elit ut aliquam purus sit amet luctus venenatis. In
-								hendrerit gravida rutrum quisque non tellus orci. Sed augue
-								lacus viverra vitae congue eu consequat ac felis. Neque sodales
-								ut etiam sit. Ornare suspendisse sed nisi lacus sed viverra
-								tellus. Ut eu sem integer vitae justo eget. Lacinia at quis
-								risus sed vulputate. Id volutpat lacus laoreet non curabitur
-								gravida arcu ac tortor. Parturient montes nascetur ridiculus mus
-								mauris. Sit amet consectetur adipiscing elit pellentesque.
-								Senectus et netus et malesuada fames. Ante in nibh mauris cursus
-								mattis molestie. Tortor dignissim convallis aenean et tortor at
-								risus viverra. Nunc congue nisi vitae suscipit tellus mauris.
-								Erat nam at lectus urna duis convallis convallis tellus id. Enim
-								lobortis scelerisque fermentum dui faucibus in ornare quam
-								viverra.
+								Conner is originally from Mesquite Texas. He attended Texas Tech
+								where he earned his Bachelors in Sociology in three years as
+								well as participated in Tech’s football program. Conner went on
+								to attend Baylor Law School where he worked with the
+								Intellectual Property Clinic by researching and filing
+								trademarks for clients, achieved over 50 hours of legal
+								community service, and held position on Baylor’s Law Review.
+								Conner has moved back home to Dallas-Fort Worth to give back to
+								his home community.
 							</Typography>
 							<br />
-							<Typography className={classes.lawyerDescription} variant='body1'>
+							{/* <Typography className={classes.lawyerDescription} variant='body1'>
 								Scelerisque eleifend donec pretium vulputate sapien nec sagittis
 								aliquam. Nec dui nunc mattis enim ut tellus elementum. Hac
 								habitasse platea dictumst quisque sagittis. Nunc scelerisque
@@ -110,7 +101,7 @@ export default function AboutPage() {
 								urna nec tincidunt praesent semper feugiat nibh. Nec dui nunc
 								mattis enim ut tellus. Malesuada bibendum arcu vitae elementum
 								curabitur vitae nunc.
-							</Typography>
+							</Typography> */}
 						</Box>
 					</Grid>
 				</Grid>
