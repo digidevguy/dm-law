@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import {
 	Box,
-	CardContent,
 	Container,
 	Divider,
 	Grid,
 	makeStyles,
+	Paper,
 	Typography,
 } from '@material-ui/core';
 
@@ -13,12 +13,14 @@ import Card from '../components/home/Card';
 import Footer from '../components/layouts/footer';
 import Link from '../src/Link';
 import CallToAction from '../components/shared/call-to-action';
+import { urlObjectKeys } from 'next/dist/next-server/lib/utils';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
 		flexGrow: 1,
 		'& #features': {
 			backgroundColor: '#f3f4ed',
+			// backgroundColor: '#1651A1',
 			textAlign: 'center',
 			padding: theme.spacing(1),
 		},
@@ -26,10 +28,13 @@ const useStyles = makeStyles((theme) => ({
 			textAlign: 'center',
 			justify: 'center',
 		},
+		'& #location-info': {
+			textAlign: 'center',
+			// width: '30%',
+		},
 	},
 	container: {
 		position: 'relative',
-		overflow: 'hidden',
 		maxHeight: '300px',
 		padding: theme.spacing(2),
 		borderWidth: '5px',
@@ -44,20 +49,21 @@ const useStyles = makeStyles((theme) => ({
 		background: 'inherit',
 	},
 	subtitle: {
-		fontWeight: '300',
+		fontWeight: '400',
 		fontStyle: 'italic',
 		textAlign: 'center',
-		fontFamily: 'serif',
+		fontFamily: 'Libre Baskerville',
 		fontSize: '2rem',
 		[theme.breakpoints.down('sm')]: { fontSize: '1.3rem' },
 		[theme.breakpoints.down('xs')]: { fontSize: '1rem' },
 	},
 	title: {
-		fontWeight: '900',
+		fontWeight: '700',
 		textAlign: 'center',
-		fontFamily: 'serif',
+		fontFamily: 'Libre Baskerville',
 	},
-	bannerImg: {
+	bannerImg: {},
+	bannerLogo: {
 		textAlign: 'center',
 	},
 }));
@@ -68,25 +74,16 @@ export default function Home() {
 	return (
 		<div className={classes.root}>
 			<Box>
-				<Grid container alignItems='center' className={classes.container}>
-					{/* <Box>
+				{/* <Box className={classes.bannerImg}>
 					<Image
 						layout='responsive'
 						src='/images/home/tingey-injury-law-firm-veNb0DDegzE-unsplash.jpg'
 						alt='Lawfirm Partners picture'
-						width={1920}
-						height={600}
+						width={2590}
+						height={1032}
 					/>
 				</Box> */}
-					<Grid item xs={6} className={classes.bannerImg}>
-						<Image
-							src='/images/dm-logo.png'
-							alt='Dyer and Mauro Logo'
-							height='209.8125'
-							width='391.3125'
-							layout='intrinsic'
-						/>
-					</Grid>
+				<Grid container alignItems='center' className={classes.container}>
 					<Grid item xs={6}>
 						<Typography variant='h1' className={classes.title}>
 							Dyer & Mauro
@@ -94,6 +91,15 @@ export default function Home() {
 						<Typography className={classes.subtitle}>
 							Helping Protect Your Tomorrow
 						</Typography>
+					</Grid>
+					<Grid item xs={6} className={classes.bannerLogo}>
+						<Image
+							src='/images/dm-logo.png'
+							alt='Dyer and Mauro Logo'
+							height='209.8125'
+							width='391.3125'
+							layout='intrinsic'
+						/>
 					</Grid>
 				</Grid>
 			</Box>
@@ -103,7 +109,7 @@ export default function Home() {
 					<Grid item>
 						<Card
 							title='Virtual Office'
-							description='Our lawyers work remotely for your connivence so you can get
+							description='Our lawyers work remotely for your convenience so you can get
             the legal help you need without having to leave your home.'
 						/>
 					</Grid>
@@ -122,6 +128,18 @@ export default function Home() {
 				</Grid>
 			</Box>
 			<CallToAction />
+			<Paper
+				component='section'
+				id='location-info'
+				variant='outlined'
+				square={false}
+			>
+				<Typography variant='h6'>Address</Typography>
+				<Typography>
+					3626 North Hall Street, Ste 610, Dallas, TX 75219
+				</Typography>
+				<Typography>In person meeting by appointment only.</Typography>
+			</Paper>
 			<Footer />
 		</div>
 	);

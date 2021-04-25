@@ -30,7 +30,10 @@ const useStyles = makeStyles((theme) => ({
 		margin: theme.spacing(3),
 	},
 	lawyerImg: {
-		[theme.breakpoints.down('sm')]: { marginTop: theme.spacing(2) },
+		[theme.breakpoints.down('sm')]: {
+			marginTop: theme.spacing(2),
+			width: '175px',
+		},
 	},
 	altLawyerDiv: {
 		[theme.breakpoints.down('xs')]: { flexDirection: 'column-reverse' },
@@ -65,8 +68,8 @@ export default function AboutPage() {
 						<Image
 							src='/images/about/cd-profile.jpeg'
 							alt='Conner Dyer Profile Photo'
-							width={175}
-							height={225}
+							width={262.5}
+							height={337.5}
 						/>
 					</Grid>
 					<Grid item sm={6}>
@@ -170,8 +173,8 @@ export default function AboutPage() {
 						<Image
 							src='/images/about/em-profile.jpeg'
 							alt='Eric Mauro Profile Photo'
-							width={175}
-							height={225}
+							width={262.5}
+							height={337.5}
 							layout='intrinsic'
 						/>
 					</Grid>

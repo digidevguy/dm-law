@@ -10,13 +10,14 @@ import CallToAction from '../../components/shared/call-to-action';
 const useStyles = makeStyles((theme) => ({
 	root: {
 		// textAlign: "center",
-		backgroundColor: '#536162',
+		backgroundColor: '#FFFFFF',
 		padding: theme.spacing(2),
 		'& table': {
 			margin: 'auto',
 			'& tr': {
 				'& td': {
 					padding: theme.spacing(1),
+					width: 325,
 				},
 			},
 		},
@@ -25,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 		margin: 'auto',
 		marginBottom: '10px',
 		padding: theme.spacing(3),
-		backgroundColor: '#FFFFFF',
+		backgroundColor: '#edeef7',
 	},
 }));
 

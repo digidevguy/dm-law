@@ -225,7 +225,7 @@ export default function Header() {
 											handleClick(e, '/practice-area/will-and-trust');
 										}}
 									>
-										<ListItemText primary='Will & Trust' />
+										<ListItemText primary='Wills & Trusts' />
 									</ListItem>
 								</List>
 							</Collapse>
@@ -253,19 +253,19 @@ export default function Header() {
 									<ListItem
 										button
 										onClick={(e) => {
-											handleClick(e, '/practice-area/trade-secrets');
+											handleClick(e, '/practice-area/trademark');
 										}}
 									>
-										<ListItemText primary='Trade Secrets' />
+										<ListItemText primary='Trademark' />
 									</ListItem>
 									<Divider variant='middle' />
 									<ListItem
 										button
 										onClick={(e) => {
-											handleClick(e, '/practice-area/trademark');
+											handleClick(e, '/practice-area/trade-secrets');
 										}}
 									>
-										<ListItemText primary='Trademark' />
+										<ListItemText primary='Trade Secrets' />
 									</ListItem>
 								</List>
 							</Collapse>
@@ -407,7 +407,7 @@ export default function Header() {
 															);
 														}}
 													>
-														Will & Trust
+														Wills & Trusts
 													</MenuItem>
 												</NestedMenuItem>
 												<MenuItem
@@ -423,17 +423,17 @@ export default function Header() {
 												>
 													<MenuItem
 														onClick={(e) => {
-															handleNavClick(e, '/practice-area/trade-secrets');
-														}}
-													>
-														Trade Secrets
-													</MenuItem>
-													<MenuItem
-														onClick={(e) => {
 															handleNavClick(e, '/practice-area/trademark');
 														}}
 													>
 														Trademark
+													</MenuItem>
+													<MenuItem
+														onClick={(e) => {
+															handleNavClick(e, '/practice-area/trade-secrets');
+														}}
+													>
+														Trade Secrets
 													</MenuItem>
 												</NestedMenuItem>
 											</MenuList>

@@ -35,7 +35,8 @@ const useStyles = makeStyles((theme) => ({
 			color: '#FFFFFF',
 		},
 	},
-	links: {},
+	links: { margin: theme.spacing(1) },
+	addressInfo: { padding: theme.spacing(1) },
 }));
 
 export default function footer() {
@@ -168,7 +169,7 @@ export default function footer() {
 													handleFooterClick(e, '/practice-area/will-and-trust');
 												}}
 											>
-												Will & Trust
+												Wills & Trusts
 											</MenuItem>
 										</NestedMenuItem>
 										<MenuItem
@@ -184,17 +185,17 @@ export default function footer() {
 										>
 											<MenuItem
 												onClick={(e) => {
-													handleFooterClick(e, '/practice-area/trade-secrets');
-												}}
-											>
-												Trade Secrets
-											</MenuItem>
-											<MenuItem
-												onClick={(e) => {
 													handleFooterClick(e, '/practice-area/trademark');
 												}}
 											>
 												Trademark
+											</MenuItem>
+											<MenuItem
+												onClick={(e) => {
+													handleFooterClick(e, '/practice-area/trade-secrets');
+												}}
+											>
+												Trade Secrets
 											</MenuItem>
 										</NestedMenuItem>
 									</MenuList>
@@ -203,6 +204,17 @@ export default function footer() {
 						</Grow>
 					)}
 				</Popper>
+			</div>
+
+			{/* <Typography variant='h3'>Office Location</Typography> */}
+			<div>
+				<Typography variant='caption' className={classes.addressInfo}>
+					3626 North Hall Street, Ste 610, Dallas, TX 75219.
+				</Typography>
+				<br />
+				<Typography variant='caption' className={classes.addressInfo}>
+					In person meeting by appointment only.
+				</Typography>
 			</div>
 			<Typography variant='caption'>
 				Copyright © 'til the end of time
