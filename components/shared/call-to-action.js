@@ -13,9 +13,13 @@ import Link from '../../src/Link';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
+		'& .MuiDivider-middle': { margin: theme.spacing(1) },
 		textAlign: 'center',
 		padding: theme.spacing(3),
 		backgroundColor: '#FFFFFF',
+		'& p': {
+			[theme.breakpoints.down('sm')]: { fontSize: '0.875rem' },
+		},
 	},
 	btn: { margin: theme.spacing(2), background: '#1651A1' },
 	rightBox: {

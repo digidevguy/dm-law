@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
@@ -5,6 +6,7 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import { CacheProvider } from '@emotion/react';
 import { CssBaseline } from '@material-ui/core';
 import createCache from '@emotion/cache';
+import * as gtag from '../util/gtag';
 import theme from '../src/theme';
 
 import Layout from '../components/layouts/main-layout';
@@ -12,6 +14,7 @@ import Layout from '../components/layouts/main-layout';
 export const cache = createCache({ key: 'css', prepend: true });
 
 export default function MyApp({ Component, pageProps }) {
+	const router = useRouter();
 	useEffect(() => {
 		// Remove the server-side injected CSS.
 		const jssStyles = document.querySelector('#jss-server-side');
@@ -19,6 +22,16 @@ export default function MyApp({ Component, pageProps }) {
 			jssStyles.parentElement.removeChild(jssStyles);
 		}
 	}, []);
+
+	useEffect(() => {
+		const handleRouteChange = (url) => {
+			gtag.pageview(url);
+		};
+		router.events.on('routeChangeComplete', handleRouteChange);
+		return () => {
+			router.events.off('routeChangeComplete', handleRouteChange);
+		};
+	}, [router.events]);
 
 	return (
 		<CacheProvider value={cache}>

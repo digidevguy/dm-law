@@ -84,10 +84,22 @@ export default function footer() {
 			</Container>
 			<div className={classes.links}>
 				<ButtonGroup variant='text' colot='primary'>
-					<Button variant='text' component={Link} noLinkStyle href='/'>
+					<Button
+						variant='text'
+						component={Link}
+						noLinkStyle
+						href='/'
+						size='small'
+					>
 						Home
 					</Button>
-					<Button variant='text' component={Link} noLinkStyle href='/about'>
+					<Button
+						variant='text'
+						component={Link}
+						noLinkStyle
+						href='/about'
+						size='small'
+					>
 						About
 					</Button>
 					<Button
@@ -95,11 +107,18 @@ export default function footer() {
 						aria-controls={open ? 'menu-list-grow' : undefined}
 						aria-haspopup='true'
 						onClick={handleFooterToggle}
+						size='small'
 					>
 						Practice Areas
 					</Button>
 
-					<Button variant='text' component={Link} noLinkStyle href='/contact'>
+					<Button
+						variant='text'
+						component={Link}
+						noLinkStyle
+						href='/contact'
+						size='small'
+					>
 						Contact
 					</Button>
 					<Button
@@ -107,6 +126,7 @@ export default function footer() {
 						component={Link}
 						noLinkStyle
 						href='https://app.clio.com/client_connect/'
+						size='small'
 					>
 						Client Portal
 					</Button>
@@ -200,8 +220,6 @@ export default function footer() {
 					)}
 				</Popper>
 			</div>
-
-			{/* <Typography variant='h3'>Office Location</Typography> */}
 			<div>
 				<Typography variant='caption' className={classes.addressInfo}>
 					3626 North Hall Street, Ste 610, Dallas, TX 75219.
@@ -211,9 +229,7 @@ export default function footer() {
 					In person meeting by appointment only.
 				</Typography>
 			</div>
-			<Typography variant='caption'>
-				Copyright © 'til the end of time
-			</Typography>
+			<Typography variant='caption'>Copyright © Dyer & Mauro, PLLC.</Typography>
 		</footer>
 	);
 }

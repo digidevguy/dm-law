@@ -31,15 +31,15 @@ const useStyles = makeStyles((theme) => ({
 			// width: '30%',
 		},
 		'& #areas-of-practice': {
-			textAlign: 'center',
-			margin: theme.spacing(1),
+			'& span': { color: '#FFF' },
+			'& .MuiDivider-middle': { backgroundColor: '#FFF', opacity: 0.25 },
 			padding: theme.spacing(1),
-			'& .MuiGrid-container': { margin: theme.spacing(1) },
-			'& .MuiGrid-item': {
-				[theme.breakpoints.down('xs')]: { margin: theme.spacing(1) },
-				// margin: theme.spacing(1),
-			},
-			'& ul': { listStyle: 'none' },
+			textAlign: 'center',
+			backgroundColor: '#1651A1',
+			color: '#FFF',
+			borderWidth: '5px',
+			borderStyle: 'double',
+			borderColor: 'rgba(255,255,255,0.25)',
 		},
 	},
 	container: {
@@ -71,9 +71,24 @@ const useStyles = makeStyles((theme) => ({
 		textAlign: 'center',
 		fontFamily: 'Libre Baskerville',
 	},
-
 	bannerLogo: {
 		textAlign: 'center',
+	},
+	largeDivider: {
+		backgroundColor: '#e4fbff',
+		maxWidth: '60%',
+		height: '2px',
+		margin: 'auto',
+		marginBottom: '5px',
+		opacity: 0.5,
+	},
+	smallerDivider: {
+		backgroundColor: '#e4fbff',
+		maxWidth: '50%',
+		// height: '2px',
+		margin: 'auto',
+		marginBottom: '10px',
+		opacity: 0.35,
 	},
 }));
 
@@ -138,89 +153,89 @@ export default function Home() {
 			</Box>
 			<Box component='section' id='areas-of-practice'>
 				<Typography variant='h3'>Areas of Practice</Typography>
+				<Divider className={classes.largeDivider} />
+
+				<Divider className={classes.smallerDivider} />
+				<Typography>
+					Here at Dyer & Mauro, we offer several areas of practice to our
+					clients. These options incude:
+				</Typography>
 				<Grid container alignItems='center' justify='center'>
 					<Grid item sm={6}>
-						<Image
-							src='/images/home/florian-klauer-mk7D-4UCfmg-unsplash.jpg'
-							alt='Typewriter picture'
-							height={209.32}
-							width={159.64}
-						/>
+						<Button
+							size='large'
+							variant='text'
+							component={Link}
+							href='/practice-area/wills-and-trusts'
+							noLinkStyle
+						>
+							Wills & Trust
+						</Button>
+						<Divider variant='middle' />
+						<Button
+							size='large'
+							variant='text'
+							component={Link}
+							href='/practice-area/probate'
+							noLinkStyle
+						>
+							Probate
+						</Button>
+						<Divider variant='middle' />
+						<Button
+							size='large'
+							variant='text'
+							component={Link}
+							href='/practice-area/family'
+							noLinkStyle
+						>
+							Family Law
+						</Button>
+						<Divider variant='middle' />
+						<Button
+							size='large'
+							variant='text'
+							component={Link}
+							href='/practice-area/trademark'
+							noLinkStyle
+						>
+							Trademark
+						</Button>
 					</Grid>
 					<Grid item sm={6}>
-						<Typography>
-							Here at Dyer & Mauro, we offer several areas of practice to our
-							clients. These options incude:
-						</Typography>
-						<ul>
-							<li>
-								<Button
-									variant='text'
-									component={Link}
-									href='/practice-area/wills-and-trusts'
-								>
-									Wills & Trust
-								</Button>
-							</li>
-							<li>
-								<Button
-									variant='text'
-									component={Link}
-									href='/practice-area/probate'
-								>
-									Probate
-								</Button>
-							</li>
-							<li>
-								<Button
-									variant='text'
-									component={Link}
-									href='/practice-area/family'
-								>
-									Family Law
-								</Button>
-							</li>
-							<li>
-								<Button
-									variant='text'
-									component={Link}
-									href='/practice-area/trademark'
-								>
-									Trademark
-								</Button>
-							</li>
-							<li>
-								<Button
-									variant='text'
-									component={Link}
-									href='/practice-area/trade-secrets'
-								>
-									Trade Secrets
-								</Button>
-							</li>
-							<li>
-								<Button
-									variant='text'
-									component={Link}
-									href='/practice-area/formation'
-								>
-									Formation
-								</Button>
-							</li>
-							<li>
-								<Button
-									variant='text'
-									component={Link}
-									href='/practice-area/noncompete-nda'
-								>
-									Non-Compete - NDA
-								</Button>
-							</li>
-						</ul>
+						<Button
+							size='large'
+							variant='text'
+							component={Link}
+							href='/practice-area/trade-secrets'
+							noLinkStyle
+						>
+							Trade Secrets
+						</Button>
+						<Divider variant='middle' />
+						<Button
+							size='large'
+							variant='text'
+							component={Link}
+							href='/practice-area/formation'
+							noLinkStyle
+						>
+							Formation
+						</Button>
+						<Divider variant='middle' />
+						<Button
+							size='large'
+							variant='text'
+							component={Link}
+							href='/practice-area/noncompete-nda'
+							noLinkStyle
+						>
+							Non-Compete - NDA
+						</Button>
 					</Grid>
 				</Grid>
-				<Divider variant='middle' />
 			</Box>
+			<Divider variant='middle' />
 			<CallToAction />
 			<Footer />
 		</div>

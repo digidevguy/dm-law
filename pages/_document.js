@@ -4,6 +4,7 @@ import { ServerStyleSheets } from '@material-ui/core/styles';
 import createEmotionServer from '@emotion/server/create-instance';
 import theme from '../src/theme';
 import { cache } from './_app.js';
+import { GA_TRACKING_ID } from '../util/gtag';
 
 const { extractCritical } = createEmotionServer(cache);
 
@@ -12,6 +13,23 @@ export default class MyDocument extends Document {
 		return (
 			<Html lang='en'>
 				<Head>
+					{/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+					<script
+						async
+						src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+					/>
+					<script
+						dangerouslySetInnerHTML={{
+							__html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+						}}
+					/>
 					{/* PWA primary color */}
 					<meta name='theme-color' content={theme.palette.primary.main} />
 					{/* <link
