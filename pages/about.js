@@ -183,8 +183,8 @@ export default function AboutPage() {
 									variant='body2'
 								>
 									While at Baylor, Eric focused mainly on building his Estate
-									Planning skills, such as drafting Wills and going through the
-									Administration of Estate. Working closely with his professors,
+									Planning skills, such as drafting wills and going through the
+									process of administering an estate. Working closely with his professors,
 									he earned the Estate Planning distinction from Baylor Law
 									school.
 								</Typography>
