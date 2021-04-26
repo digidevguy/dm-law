@@ -54,8 +54,8 @@ const CallToAction = () => {
 							<Image
 								src='/images/toa-heftiba-_UIVmIBB3JU-unsplash.jpg'
 								alt='help image'
-								width={325}
-								height={200}
+								width={335.94}
+								height={223.98}
 								layout='intrinsic'
 							/>
 						</div>
