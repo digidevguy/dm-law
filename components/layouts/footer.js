@@ -4,6 +4,8 @@ import {
 	ButtonGroup,
 	ClickAwayListener,
 	Container,
+	Divider,
+	Grid,
 	Grow,
 	makeStyles,
 	MenuItem,
@@ -36,7 +38,13 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	links: { margin: theme.spacing(1) },
-	addressInfo: { padding: theme.spacing(1) },
+	ofcInfo: {
+		'& .MuiDivider-middle': { backgroundColor: '#FFF', opacity: 0.25 },
+		padding: theme.spacing(1),
+		maxWidth: '500px',
+		justifySelf: 'center',
+		margin: 'auto',
+	},
 }));
 
 export default function footer() {
@@ -221,13 +229,36 @@ export default function footer() {
 				</Popper>
 			</div>
 			<div>
-				<Typography variant='caption' className={classes.addressInfo}>
-					3626 North Hall Street, Ste 610, Dallas, TX 75219.
-				</Typography>
-				<br />
-				<Typography variant='caption' className={classes.addressInfo}>
-					In person meeting by appointment only.
-				</Typography>
+				<Grid
+					container
+					justify='center'
+					spacing='1'
+					className={classes.ofcInfo}
+				>
+					<Grid item sm={4} xs={12}>
+						<Typography>Office Location</Typography>
+						<Divider variant='middle' />
+						<Typography variant='caption' className={classes.addressInfo}>
+							3626 North Hall Street, Ste 610, Dallas, TX 75219.
+						</Typography>
+						<br />
+						<Typography variant='caption' className={classes.addressInfo}>
+							In person meeting by appointment only.
+						</Typography>
+					</Grid>
+					<Grid item sm={4} xs={12}>
+						<Typography>Office Number </Typography>
+						<Divider variant='middle' />
+						<Typography variant='caption'>(972) 656-1446</Typography>
+					</Grid>
+					<Grid item sm={4} xs={12}>
+						<Typography>Office Hours</Typography>
+						<Divider variant='middle' />
+						<Typography variant='caption'>
+							Monday - Friday 9:00AM - 5:00PM
+						</Typography>
+					</Grid>
+				</Grid>
 			</div>
 			<Typography variant='caption'>Copyright © Dyer & Mauro, PLLC.</Typography>
 		</footer>

@@ -5,6 +5,8 @@ import {
 	Box,
 	Button,
 	CircularProgress,
+	Container,
+	Divider,
 	Grid,
 	makeStyles,
 	Paper,
@@ -69,6 +71,16 @@ const useStyles = makeStyles((theme) => ({
 	spinner: {
 		zIndex: theme.zIndex.drawer + 1,
 		color: '#fff',
+	},
+	officeInfo: {
+		'& .MuiDivider-middle': { backgroundColor: '#FFF', opacity: 0.25 },
+		padding: theme.spacing(1),
+		marginTop: theme.spacing(1),
+		backgroundColor: '#1651A1',
+		color: '#FFF',
+		borderWidth: '5px',
+		borderStyle: 'double',
+		borderColor: 'rgba(255,255,255,0.25)',
 	},
 }));
 
@@ -232,6 +244,19 @@ export default function ContactPage() {
 								formation, trademarks and guardianship matters. Contact us today
 								to find out how we can be of assistance.
 							</Typography>
+
+							<Grid container className={classes.officeInfo} justify='center'>
+								<Grid item sm={6}>
+									<Typography>Office Number </Typography>
+									<Divider variant='middle' />
+									<Typography>(972) 656-1446</Typography>
+								</Grid>
+								<Grid item sm={6}>
+									<Typography>Office Hours</Typography>
+									<Divider variant='middle' />
+									<Typography>Monday - Friday 9:00AM - 5:00PM</Typography>
+								</Grid>
+							</Grid>
 							<Box className={classes.pageImg}>
 								<Image
 									src='/images/contact/phone-photo.png'
