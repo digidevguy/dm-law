@@ -45,6 +45,9 @@ export default function MyApp({ Component, pageProps }) {
 						rel='stylesheet'
 						href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap'
 					/>
+					<meta charSet='UTF-8' />
+					<meta name='viewport' content='width=device-width, initial-scale=1' />
+					<link rel='icon' type='image/ico' href='./favicon.ico' />
 				</Head>
 				<ThemeProvider theme={theme}>
 					<CssBaseline />
