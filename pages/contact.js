@@ -14,6 +14,7 @@ import {
 
 import { useState } from 'react';
 
+// Custom components
 import Toast from '../src/Toast';
 import Footer from '../components/layouts/footer';
 import Head from 'next/head';
