@@ -34,7 +34,7 @@ export default async function handler(req, res) {
 				{
 					from: '"DMLaw Contact NodeMailer" <a1b2c3d419851@outlook.com>',
 					to: process.env.email_list,
-					subject: 'Test email from Outlook (w/ NodeMailer)',
+					subject: 'New Consultation Request',
 					html: output,
 				},
 				(err, info) => {
