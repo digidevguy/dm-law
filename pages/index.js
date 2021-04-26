@@ -8,12 +8,12 @@ import {
 	Typography,
 } from '@material-ui/core';
 
+// Custom components
 import Card from '../components/home/Card';
 import Footer from '../components/layouts/footer';
 import Link from '../src/Link';
 import CallToAction from '../components/shared/call-to-action';
 import Head from 'next/head';
-import { Fragment } from 'react';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
