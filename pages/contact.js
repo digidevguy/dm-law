@@ -16,6 +16,7 @@ import { useState } from 'react';
 
 import Toast from '../src/Toast';
 import Footer from '../components/layouts/footer';
+import Head from 'next/head';
 
 const useStyles = makeStyles((theme) => ({
 	btn: { margin: theme.spacing(2), background: '#1651A1' },
@@ -136,106 +137,115 @@ export default function ContactPage() {
 	};
 
 	return (
-		<div className={classes.root}>
-			<Backdrop className={classes.spinner} open={loading}>
-				<CircularProgress color='inherit' />
-			</Backdrop>
-			<Toast open={open} onClose={handleToastClose} message={resMessage} />
-			<Box className={classes.container}>
-				<Image
-					layout='responsive'
-					src='/images/pawel-czerwinski--0xCCPIbl3M-unsplash.jpg'
-					alt='Contact Us Image'
-					width={475}
-					height={175}
+		<>
+			<Head>
+				<title>Contact Us</title>
+				<meta
+					name='description'
+					content='Contact Dyer & Mauro to assist you in the Mesquite and Dallas area.'
 				/>
-				<Typography className={classes.title} variant='h1'>
-					Contact Us
-				</Typography>
-			</Box>
-			<Grid container alignItems='center'>
-				<Grid item sm={6}>
-					<Paper className={classes.formContent}>
-						<Typography variant='h5'>
-							Schedule Your Free 15 Minute Consultation
-						</Typography>
-						<form className={classes.form} autoComplete='off'>
-							<div>
-								<TextField
-									name='name'
-									label='Your Name'
-									onChange={handleInputChange}
-									value={formValues.name}
-								/>
-								<TextField
-									name='phone'
-									label='Telephone Number'
-									onChange={handleInputChange}
-									value={formValues.phone}
-								/>
+			</Head>
+			<div className={classes.root}>
+				<Backdrop className={classes.spinner} open={loading}>
+					<CircularProgress color='inherit' />
+				</Backdrop>
+				<Toast open={open} onClose={handleToastClose} message={resMessage} />
+				<Box className={classes.container}>
+					<Image
+						layout='responsive'
+						src='/images/pawel-czerwinski--0xCCPIbl3M-unsplash.jpg'
+						alt='Contact Us Image'
+						width={475}
+						height={175}
+					/>
+					<Typography className={classes.title} variant='h1'>
+						Contact Us
+					</Typography>
+				</Box>
+				<Grid container alignItems='center'>
+					<Grid item sm={6}>
+						<Paper className={classes.formContent}>
+							<Typography variant='h5'>
+								Schedule Your Free 15 Minute Consultation
+							</Typography>
+							<form className={classes.form} autoComplete='off'>
+								<div>
+									<TextField
+										name='name'
+										label='Your Name'
+										onChange={handleInputChange}
+										value={formValues.name}
+									/>
+									<TextField
+										name='phone'
+										label='Telephone Number'
+										onChange={handleInputChange}
+										value={formValues.phone}
+									/>
 
-								<TextField
-									name='email'
-									label='Email Address'
-									onChange={handleInputChange}
-									value={formValues.email}
-									error={error}
-									helperText={
-										error
-											? 'Email is either missing or invalid. Please try again'
-											: ''
-									}
-								/>
-								<TextField
-									name='bttc'
-									label='Best Time to Contact'
-									onChange={handleInputChange}
-									value={formValues.bttc}
-								/>
+									<TextField
+										name='email'
+										label='Email Address'
+										onChange={handleInputChange}
+										value={formValues.email}
+										error={error}
+										helperText={
+											error
+												? 'Email is either missing or invalid. Please try again'
+												: ''
+										}
+									/>
+									<TextField
+										name='bttc'
+										label='Best Time to Contact'
+										onChange={handleInputChange}
+										value={formValues.bttc}
+									/>
 
-								<TextField
-									name='message'
-									label='How can we help you?'
-									variant='outlined'
-									multiline
-									rows={4}
-									onChange={handleInputChange}
-									value={formValues.message}
+									<TextField
+										name='message'
+										label='How can we help you?'
+										variant='outlined'
+										multiline
+										rows={4}
+										onChange={handleInputChange}
+										value={formValues.message}
+									/>
+								</div>
+								<Button
+									className={classes.btn}
+									variant='contained'
+									onClick={submitHandler}
+									color='primary'
+								>
+									Submit
+								</Button>
+							</form>
+						</Paper>
+					</Grid>
+					<Grid item sm={6}>
+						<Box className={classes.paperContent}>
+							<Typography>
+								We are a full-service law firm and can assist with legal issues
+								including wills, trusts, probate, family matters, business
+								formation, trademarks and guardianship matters. Contact us today
+								to find out how we can be of assistance.
+							</Typography>
+							<Box className={classes.pageImg}>
+								<Image
+									src='/images/contact/phone-photo.png'
+									alt='help image'
+									width={300}
+									height={400}
+									layout='intrinsic'
 								/>
-							</div>
-							<Button
-								className={classes.btn}
-								variant='contained'
-								onClick={submitHandler}
-								color='primary'
-							>
-								Submit
-							</Button>
-						</form>
-					</Paper>
-				</Grid>
-				<Grid item sm={6}>
-					<Box className={classes.paperContent}>
-						<Typography>
-							We are a full-service law firm and can assist with legal issues
-							including wills, trusts, probate, family matters, business
-							formation, trademarks and guardianship matters. Contact us today
-							to find out how we can be of assistance.
-						</Typography>
-						<Box className={classes.pageImg}>
-							<Image
-								src='/images/contact/phone-photo.png'
-								alt='help image'
-								width={300}
-								height={400}
-								layout='intrinsic'
-							/>
+							</Box>
 						</Box>
-					</Box>
+					</Grid>
 				</Grid>
-			</Grid>
 
-			<Footer />
-		</div>
+				<Footer />
+			</div>
+		</>
 	);
 }

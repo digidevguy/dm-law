@@ -36,7 +36,7 @@ export default function PracticeAreaPage(props) {
 	return (
 		<Fragment>
 			<Head>
-				<title></title>
+				<title>{props.practiceAreaData.title}</title>
 				<meta name='description' />
 			</Head>
 			<Box className={classes.root}>
