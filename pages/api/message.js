@@ -4,6 +4,13 @@ export default async function handler(req, res) {
 	if (req.method === 'POST') {
 		const { name, phone, email, message } = req.body;
 
+		if (!email || !email.includes('@')) {
+			res
+				.status(401)
+				.send({ response: 'Invalid email, please check and try again.' });
+			return;
+		}
+
 		let transporter = nodeMailer.createTransport({
 			host: 'smtp.office365.com',
 			secure: false,

@@ -122,6 +122,7 @@ export default function ContactPage() {
 		setError(false);
 		setLoading(true);
 
+		// Basic email validation
 		if (!formValues.email || !formValues.email.includes('@')) {
 			setLoading(false);
 			setError(true);
