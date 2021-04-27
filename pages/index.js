@@ -137,7 +137,7 @@ export default function Home() {
 					<Grid item>
 						<Card
 							title='Client Convenience'
-							description='We offer flexible office locations so when we do meet in person the location will be convenient to you. '
+							description='We offer flexible office locations so when we do meet in person, the location will be convenient to you. '
 						/>
 					</Grid>
 					<Grid item>
