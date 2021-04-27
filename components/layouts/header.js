@@ -240,10 +240,10 @@ export default function Header() {
 									<ListItem
 										button
 										onClick={(e) => {
-											handleClick(e, '/practice-area/formation');
+											handleClick(e, '/practice-area/business-formation');
 										}}
 									>
-										<ListItemText primary='Formation' />
+										<ListItemText primary='Business Formation' />
 									</ListItem>
 									<Divider variant='middle' />
 									<ListItem
@@ -403,10 +403,13 @@ export default function Header() {
 												>
 													<MenuItem
 														onClick={(e) => {
-															handleNavClick(e, '/practice-area/formation');
+															handleNavClick(
+																e,
+																'/practice-area/business-formation'
+															);
 														}}
 													>
-														Formation
+														Business Formation
 													</MenuItem>
 													<MenuItem
 														onClick={(e) => {

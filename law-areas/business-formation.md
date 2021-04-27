@@ -1,5 +1,5 @@
 ---
-title: 'Formation'
+title: 'Business Formation'
 ---
 
 A key to every business venture is a strong foundation.

@@ -214,10 +214,10 @@ export default function Home() {
 							size='large'
 							variant='text'
 							component={Link}
-							href='/practice-area/formation'
+							href='/practice-area/business-formation'
 							noLinkStyle
 						>
-							Formation
+							Business Formation
 						</Button>
 						<Divider variant='middle' />
 						<Button

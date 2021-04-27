@@ -82,10 +82,20 @@ export default function footer() {
 		<footer className={classes.footer}>
 			<Container>
 				<ButtonGroup>
-					<Button variant='text' component={Link} noLinkStyle href='/'>
+					<Button
+						variant='text'
+						component={Link}
+						noLinkStyle
+						href='https://www.facebook.com/DyerMauroPLLC'
+					>
 						<FacebookIcon />
 					</Button>
-					<Button variant='text' component={Link} noLinkStyle href='/'>
+					<Button
+						variant='text'
+						component={Link}
+						noLinkStyle
+						href='https://www.linkedin.com/company/dyer-mauro-pllc'
+					>
 						<LinkedInIcon />
 					</Button>
 				</ButtonGroup>
@@ -208,10 +218,13 @@ export default function footer() {
 										>
 											<MenuItem
 												onClick={(e) => {
-													handleFooterClick(e, '/practice-area/formation');
+													handleFooterClick(
+														e,
+														'/practice-area/business-formation'
+													);
 												}}
 											>
-												Formation
+												Business Formation
 											</MenuItem>
 											<MenuItem
 												onClick={(e) => {
@@ -260,7 +273,7 @@ export default function footer() {
 					</Grid>
 				</Grid>
 			</div>
-			<Typography variant='caption'>Copyright © Dyer & Mauro, PLLC.</Typography>
+			<Typography variant='caption'>Copyright © Dyer & Mauro, PLLC</Typography>
 		</footer>
 	);
 }
