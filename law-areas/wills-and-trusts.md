@@ -6,12 +6,13 @@ title: 'Wills & Trusts'
 
 You’ve spent your whole life working hard; what we can do is help ensure that your hard-earned assets go to who you want upon your passing. Our attorneys will work with you one on one to guarantee that your assets, otherwise known as your estate, are handled exactly how you want upon your passing. We will meet with you, find out your goals, write your Will, and ensure that all the legal formalities are followed so that you can be sure that your family, your friends, or whomever you wish is secure in their future.
 
-Our Will’s Bundle will provide everything you need for a flat fee. The Will Bundle includes:
+Our Wills & Estate Planning Bundles will provide everything you need for a flat fee. The Will Bundle includes:
 
 - Last Will and Testament
 - Trusts and Guardianships for minor children
 - Medical and Durable power of attorney
 - Advance Directives
+- Non-probate beneficiary designations
 - Signing Ceremony
 - Notary service
 
