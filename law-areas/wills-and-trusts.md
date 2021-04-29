@@ -2,7 +2,7 @@
 title: 'Wills & Trusts'
 ---
 
-## Will Bundles
+## Will & Estate Planning Bundles
 
 You’ve spent your whole life working hard; what we can do is help ensure that your hard-earned assets go to who you want upon your passing. Our attorneys will work with you one on one to guarantee that your assets, otherwise known as your estate, are handled exactly how you want upon your passing. We will meet with you, find out your goals, write your Will, and ensure that all the legal formalities are followed so that you can be sure that your family, your friends, or whomever you wish is secure in their future.
 
