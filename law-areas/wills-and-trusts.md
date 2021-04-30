@@ -20,7 +20,7 @@ When you have family events such as a wedding, divorce, or the birth of a child,
 
 We can also draft a ladybird deed or payable on death to avoid your home from having to go through the probate process.
 
-If you pass without a will, often your family is not only dealing with the loss of a loved one, but there could also be disagreements with how your estate should be distributed. Don’t leave the distribution of your estate up to chance. Contact us today to learn about our Will Bundles.
+If you pass without a Will, often your family is not only dealing with the loss of a loved one, but there could also be disagreements with how your estate should be distributed. Don’t leave the distribution of your estate up to chance. Contact us today to learn about our Will Bundles.
 
 ## Trust Bundles
 
