@@ -1,12 +1,4 @@
-export default function handler(req, res) {
-	res.statusCode = 200;
-	res.setHeader('Content-Type', 'application/xml');
-
-	// Instructing the Vercel edge to cache the file
-	res.setHeader('Cache-control', 'stale-while-revalidate, s-maxage=3600');
-
-	// generate sitemap here
-	const xml = `<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='utf-8'?>
       <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9/'>
       <url>
       <loc>https://www.dyermaurolaw.com/</loc>
@@ -51,18 +43,4 @@ export default function handler(req, res) {
       <loc>http://www.dyermaurolaw.com/wills-and-trust</loc>
       <lastmod>4/29/2021</lastmod>
       </url>
-      </urlset>`;
-
-	res.end(xml);
-}
-
-module.exports = {
-	async rewrites() {
-		return [
-			{
-				source: '/sitemap.xml',
-				destination: 'api/sitemap',
-			},
-		];
-	},
-};
+      </urlset>
