@@ -15,3 +15,7 @@ export const event = ({ action, category, label, value }) => {
 		value: value,
 	});
 };
+
+export const optOut = () => {
+	window[`ga-disable-${GA_TRACKING_ID}`] = true;
+};

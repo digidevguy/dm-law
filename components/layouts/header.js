@@ -7,6 +7,9 @@ import {
 	ButtonGroup,
 	ClickAwayListener,
 	Collapse,
+	Dialog,
+	DialogActions,
+	DialogContentText,
 	Divider,
 	Grow,
 	IconButton,
@@ -24,6 +27,7 @@ import {
 import MenuIcon from '@material-ui/icons/Menu';
 import { useEffect, useRef, useState } from 'react';
 import { ExpandLess, ExpandMore } from '@material-ui/icons';
+import ConsentDialog from '../shared/ConsentDialog';
 
 import NestedMenuItem from 'material-ui-nested-menu-item';
 
@@ -66,8 +70,9 @@ export default function Header() {
 	const [open, setOpen] = useState(false);
 	const [nestedOpen, setNestedOpen] = useState(false);
 	const [menuOpen, setMenuOpen] = useState(false);
-	const anchorRef = useRef(null);
 	const [menuPosition, setMenuPosition] = useState(null);
+
+	const anchorRef = useRef(null);
 
 	//Practice Area state objects
 	const [blOpen, setBLOpen] = useState(false);
@@ -132,6 +137,7 @@ export default function Header() {
 
 	return (
 		<header className={classes.root}>
+			<ConsentDialog />
 			<MuiDrawer
 				open={open}
 				onClose={handleDrawerToggle}
