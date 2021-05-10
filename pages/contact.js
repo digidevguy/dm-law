@@ -250,7 +250,7 @@ export default function ContactPage() {
 								<Grid item sm={6}>
 									<Typography>Office Number </Typography>
 									<Divider variant='middle' />
-									<a href="tel:9726561446" style="color:inherit;text-decoration: none;">(972) 656-1446 </a>
+									<a href="tel:9726561446">(972) 656-1446 </a>
 								</Grid>
 								<Grid item sm={6}>
 									<Typography>Office Hours</Typography>
