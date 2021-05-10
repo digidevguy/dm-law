@@ -180,7 +180,7 @@ export default function ContactPage() {
 					<Grid item sm={6}>
 						<Paper className={classes.formContent}>
 							<Typography variant='h5'>
-								Schedule Your Free 15 Minute Consultation
+								Schedule Your Free 30 Minute Consultation
 							</Typography>
 							<form className={classes.form} autoComplete='off'>
 								<div>
