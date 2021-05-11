@@ -84,7 +84,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	 a: {
 		color: '#ffffff',
-		text-decoration: 'none',
+		textdecoration: 'none',
 	},
 }));
 
