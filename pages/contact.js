@@ -153,10 +153,10 @@ export default function ContactPage() {
 	return (
 		<>
 			<Head>
-				<title>Contact Us</title>
+				<title>Contact Your Mesquite & Dallas Lawyers</title>
 				<meta
 					name='description'
-					content='Contact Dyer & Mauro to assist you in the Mesquite and Dallas area.'
+					content='Contact Dyer & Mauro to assist you with your legal needs in the Mesquite and Dallas area.'
 				/>
 			</Head>
 			<div className={classes.root}>
@@ -168,7 +168,7 @@ export default function ContactPage() {
 					<Image
 						layout='responsive'
 						src='/images/pawel-czerwinski--0xCCPIbl3M-unsplash.jpg'
-						alt='Contact Us Image'
+						alt='Contact Us to assist you with your estate plan or family law issues.'
 						width={475}
 						height={175}
 					/>
@@ -261,7 +261,7 @@ export default function ContactPage() {
 							<Box className={classes.pageImg}>
 								<Image
 									src='/images/contact/phone-photo.png'
-									alt='help image'
+									alt='If you need help or have legal issues contact Dyer & Mauro Law.'
 									width={300}
 									height={400}
 									layout='intrinsic'

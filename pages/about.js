@@ -48,7 +48,7 @@ export default function AboutPage() {
 	return (
 		<>
 			<Head>
-				<title>About Us</title>
+				<title>Dyer & Mauro Staff</title>
 				<meta
 					name='description'
 					content='The Dyer & Mauro Team are ready to assist your legal needs.'
@@ -59,7 +59,7 @@ export default function AboutPage() {
 					<Image
 						layout='responsive'
 						src='/images/mikhail-pavstyuk-EKy2OTRPXdw-unsplash.jpg'
-						alt='placeholder image'
+						alt='Get to know the team that can assist you with your estate planning or family law or other legal needs.'
 						width={475}
 						height={175}
 					/>
@@ -76,7 +76,7 @@ export default function AboutPage() {
 						<Grid className={classes.lawyerImg} item sm={6}>
 							<Image
 								src='/images/about/cd-profile.jpeg'
-								alt='Conner Dyer Profile Photo'
+								alt='Conner Dyer managing partner of Dyer & Mauro Law profile photo'
 								width={262.5}
 								height={337.5}
 							/>
@@ -184,9 +184,9 @@ export default function AboutPage() {
 								>
 									While at Baylor, Eric focused mainly on building his Estate
 									Planning skills, such as drafting wills and going through the
-									process of administering an estate. Working closely with his professors,
-									he earned the Estate Planning distinction from Baylor Law
-									school.
+									process of administering an estate. Working closely with his
+									professors, he earned the Estate Planning distinction from
+									Baylor Law school.
 								</Typography>
 								<br />
 								<Typography
@@ -203,7 +203,7 @@ export default function AboutPage() {
 						<Grid className={classes.lawyerImg} item sm={6}>
 							<Image
 								src='/images/about/em-profile.jpeg'
-								alt='Eric Mauro Profile Photo'
+								alt='Eric Mauro managing partner of Dyer & Mauro Law profile photo'
 								width={262.5}
 								height={337.5}
 								layout='intrinsic'

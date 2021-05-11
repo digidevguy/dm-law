@@ -1,4 +1,5 @@
 import { Divider, makeStyles, Paper, Typography } from '@material-ui/core';
+import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm';
 import unified from 'unified';
@@ -18,7 +19,8 @@ export default function PracticeContent({ practiceArea }) {
 
 	return (
 		<>
-			<Typography variant='h1'>{practiceArea.title}</Typography>
+			{/* <Image src={`/images/oractice-areas/${practiceArea.image}`} width={} height={} layout={} /> */}
+			<Typography variant='h1'>{practiceArea.name}</Typography>
 			<Divider variant='middle' />
 			<ReactMarkdown plugins={[gfm]}>{practiceArea.content}</ReactMarkdown>
 		</>

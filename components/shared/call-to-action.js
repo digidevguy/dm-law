@@ -53,7 +53,7 @@ const CallToAction = () => {
 						<div className={classes.imgWrapper}>
 							<Image
 								src='/images/toa-heftiba-_UIVmIBB3JU-unsplash.jpg'
-								alt='help image'
+								alt='Representation of Will execution ceremony'
 								width={335.94}
 								height={223.98}
 								layout='intrinsic'

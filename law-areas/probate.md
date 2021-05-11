@@ -1,5 +1,9 @@
 ---
-title: 'Probate'
+name: 'Probate'
+title: 'Probate Lawyers'
+description: 'After the death of a loved one, dividing their assets is a hard and confusing process.'
+image: 'probate-banner.jpeg'
+imageAlt: 'Representation of passing property upon death of family'
 ---
 
 ## Dying Without a Will and Intestate Succession

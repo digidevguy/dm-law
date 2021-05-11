@@ -116,7 +116,7 @@ export default function Home() {
 					<Grid item xs={6} className={classes.bannerLogo}>
 						<Image
 							src='/images/dm-logo.png'
-							alt='Dyer and Mauro Logo'
+							alt='Estate Planning and Family Law attorney’s logo'
 							height='209.8125'
 							width='391.3125'
 							layout='intrinsic'

@@ -1,5 +1,9 @@
 ---
-title: 'Wills & Trusts'
+name: 'Wills & Trusts'
+title: 'Wills & Trusts Lawyers'
+description: 'Dyer & Mauro law can help you create a Will or Trust. Dyer & Mauro also handle Codicils, Will Contests, and any Non-Probate needs'
+image: 'wills-and-trusts/wills-and-trust-banner.jpeg'
+imageAlt: 'Representation of Will execution ceremony'
 ---
 
 ## Will & Estate Planning Bundles

@@ -1,5 +1,9 @@
 ---
-title: 'Non-Compete - NDA'
+name: 'Non-compete, NDA'
+title: 'Non-Compete Lawyers'
+description: 'Our Family Law Attorneys can assist you with any Divorce, Child Custody, CPS, or Adoptions'
+image: 'noncompete-banner.jpeg'
+imageAlt: 'Image of representation of non-compete agreement.'
 ---
 
 ## Non-compete

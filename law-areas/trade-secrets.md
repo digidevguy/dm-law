@@ -1,5 +1,9 @@
 ---
-title: 'Trade Secrets'
+name: 'Trade Secrets'
+title: 'Trade Secret Attorney'
+description: 'Have you developed a secret recipe or process in your business that gives you an edge? You may need the help or our Trade Secret Attorneys so you can continue to benefit from your business secrets.'
+image: 'trade-secret-banner.jpeg'
+imageAlt: 'Image of representation of trade secret.'
 ---
 
 If you have a formula, process, secret recipe, or any other secret thing that gives your business an edge in the industry, you can benefit by establishing trade secret protection.
