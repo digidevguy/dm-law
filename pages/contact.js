@@ -82,6 +82,10 @@ const useStyles = makeStyles((theme) => ({
 		borderStyle: 'double',
 		borderColor: 'rgba(255,255,255,0.25)',
 	},
+	 a {
+		color: #ffffff;
+		text-decoration: none;
+	},
 }));
 
 export default function ContactPage() {
@@ -250,7 +254,7 @@ export default function ContactPage() {
 								<Grid item sm={6}>
 									<Typography>Office Number </Typography>
 									<Divider variant='middle' />
-									<Typography> (972) 656-1446 </Typography>
+									<a href= "tel:9726561446"> (972) 656-1446 </a>
 								</Grid>
 								<Grid item sm={6}>
 									<Typography>Office Hours</Typography>
