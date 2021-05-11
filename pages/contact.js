@@ -82,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
 		borderStyle: 'double',
 		borderColor: 'rgba(255,255,255,0.25)',
 	},
-	 a {
+	 a: {
 		color: #ffffff,
 		text-decoration: none,
 	},
