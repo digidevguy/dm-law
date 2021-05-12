@@ -1,3 +1,4 @@
+import Link from '../src/Link';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import {
@@ -5,7 +6,6 @@ import {
 	Box,
 	Button,
 	CircularProgress,
-	Container,
 	Divider,
 	Grid,
 	makeStyles,
@@ -20,7 +20,7 @@ import { useState } from 'react';
 import Toast from '../src/Toast';
 import Footer from '../components/layouts/footer';
 import Head from 'next/head';
-  
+
 const useStyles = makeStyles((theme) => ({
 	btn: { margin: theme.spacing(2), background: '#1651A1' },
 	container: {
@@ -34,6 +34,9 @@ const useStyles = makeStyles((theme) => ({
 			margin: 'auto',
 			marginTop: '15px',
 			marginBottom: '15px',
+		},
+		'& a': {
+			color: '#FFF',
 		},
 	},
 	formContent: {
@@ -82,7 +85,6 @@ const useStyles = makeStyles((theme) => ({
 		borderStyle: 'double',
 		borderColor: 'rgba(255,255,255,0.25)',
 	},
-	
 }));
 
 export default function ContactPage() {
@@ -251,7 +253,15 @@ export default function ContactPage() {
 								<Grid item sm={6}>
 									<Typography>Office Number </Typography>
 									<Divider variant='middle' />
-									<Typography> (972) 656-1446 </Typography>
+									<Button
+										variant='text'
+										component={Link}
+										href={'tel:+19726561446'}
+										noLinkStyle
+										passHref
+									>
+										(972) 656-1446
+									</Button>
 								</Grid>
 								<Grid item sm={6}>
 									<Typography>Office Hours</Typography>
