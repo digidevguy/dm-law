@@ -262,7 +262,15 @@ export default function footer() {
 					<Grid item sm={4} xs={12}>
 						<Typography>Office Number </Typography>
 						<Divider variant='middle' />
-						<Typography variant='caption'>(972) 656-1446</Typography>
+						<Button
+							variant='text'
+							component={Link}
+							href={'tel:+19726561446'}
+							noLinkStyle
+							passHref
+						>
+							(972) 656-1446
+						</Button>
 					</Grid>
 					<Grid item sm={4} xs={12}>
 						<Typography>Office Hours</Typography>
