@@ -1,7 +1,7 @@
 ---
 name: 'Probate'
 title: 'Probate Lawyers'
-description: 'After the death of a loved one, dividing their assets is a hard and confusing process.'
+description: 'After the death of a loved one, dividing their assets is a hard and confusing process. Let us help you.'
 image: 'probate-banner.jpeg'
 imageAlt: 'Representation of passing property upon death of family'
 ---
