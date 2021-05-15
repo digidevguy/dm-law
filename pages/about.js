@@ -194,7 +194,7 @@ export default function AboutPage() {
 									variant='body2'
 								>
 									During his free time, Eric likes to bake fun and exciting
-									deserts as well as taking his two Australian Shepherds,
+									desserts as well as taking his two Australian Shepherds,
 									Tootsie and Giggles, on hikes at the local parks and nature
 									preserves.
 								</Typography>
