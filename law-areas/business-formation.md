@@ -4,6 +4,8 @@ title: 'Business Lawyers'
 description: 'Starting your business takes a lot of work. Let our Business Lawyers take care of your business law needs so that you can focus on the fun stuff.'
 image: 'business-formation-banner.jpeg'
 imageAlt: 'Image of starting a business.'
+imgWidth: '7251'
+imgHeight: '3641'
 ---
 
 A key to every business venture is a strong foundation.

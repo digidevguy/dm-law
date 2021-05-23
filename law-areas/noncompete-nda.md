@@ -4,6 +4,8 @@ title: 'Non-Compete Lawyers'
 description: 'Our Family Law Attorneys can assist you with any Divorce, Child Custody, CPS, or Adoptions'
 image: 'noncompete-banner.jpeg'
 imageAlt: 'Image of representation of non-compete agreement.'
+imgWidth: '5760'
+imgHeight: '3840'
 ---
 
 ## Non-compete

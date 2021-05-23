@@ -4,6 +4,8 @@ title: 'Trademark Lawyers'
 description: 'Starting a business or developing your brand? Our Trademark Attorneys help get you both State and Federal Trademark protection to protect your business’ image.'
 image: 'trademark-banner.jpeg'
 imageAlt: 'Image of Trademark Protection.'
+imgWidth: '8000'
+imgHeight: '2500'
 ---
 
 ## Search

@@ -4,6 +4,8 @@ title: 'Family Lawyers'
 description: 'Our Family Law Attorneys can assist you with any Divorce, Child Custody, CPS, or Adoptions.'
 image: 'family-banner.jpeg'
 imageAlt: 'Representation of marriage, divorce, or adoption'
+imgWidth: '5000'
+imgHeight: '3641'
 ---
 
 ## Adoption/Fostering

@@ -45,6 +45,10 @@ const useStyles = makeStyles((theme) => ({
 		justifySelf: 'center',
 		margin: 'auto',
 	},
+	bottomBox: {
+		maxWidth: '700px',
+		margin: 'auto',
+	},
 }));
 
 export default function footer() {
@@ -281,7 +285,27 @@ export default function footer() {
 					</Grid>
 				</Grid>
 			</div>
-			<Typography variant='caption'>Copyright © Dyer & Mauro, PLLC</Typography>
+			<Grid
+				className={classes.bottomBox}
+				container
+				justify='center'
+				alignItems='center'
+			>
+				<Grid item sm={6} xs={12}>
+					<Typography variant='caption'>
+						Copyright © Dyer & Mauro, PLLC
+					</Typography>
+				</Grid>
+				<Grid item sm={6} xs={12}>
+					<Typography variant='caption'>
+						This website was created by{' '}
+						<a href='https://www.mattlittrell.dev' target='_blank'>
+							Matthew Littrell
+						</a>
+						.
+					</Typography>
+				</Grid>
+			</Grid>
 		</footer>
 	);
 }
